@@ -21,14 +21,14 @@ final class OmdbManager :  OmdbService {
     func fetchSearchResponse(searchText: String, pageNumber: Int,completion: @escaping (Result<SearchResponse, ServiceError>) -> ()) {
         
         if let url = URL(string: Constants.baseURL + Constants.searchQuery + searchText +  Constants.pageQuery + String(pageNumber)) {
-            
-            
+                        
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if error != nil {
                     completion(.failure(.serverError))
                 } else if let data = data {
                     
                     let response = try? JSONDecoder().decode(SearchResponse.self, from: data)
+                    
                                         
                     if let response = response {
                         completion(.success(response))
@@ -49,12 +49,12 @@ final class OmdbManager :  OmdbService {
         
         if let url = URL(string: Constants.baseURL + Constants.imdbQuery + imdbId) {
             
-            
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if error != nil {
                     completion(.failure(.serverError))
                 } else if let data = data {
                     
+                                        
                     let response = try? JSONDecoder().decode(DetailResponse.self, from: data)
                                         
                     if let response = response {

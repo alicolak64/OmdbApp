@@ -1,5 +1,5 @@
 //
-//  DetailsResponse.swift
+//  DetailDto.swift
 //  OmdbApp
 //
 //  Created by Ali Çolak on 7.11.2023.
@@ -7,8 +7,7 @@
 
 import Foundation
 
-
-struct DetailResponse: Codable {
+struct DetailDto: Codable {
     let title: String
     let year: String
     let rated: String
@@ -23,7 +22,7 @@ struct DetailResponse: Codable {
     let country: String
     let awards: String
     let poster: String
-    let ratings: [RatingResponse]?
+    let ratings: [RatingDto]?
     let metascore: String
     let imdbRating: String
     let imdbVotes: String
@@ -36,7 +35,7 @@ struct DetailResponse: Codable {
     let response: String
 }
 
-struct RatingResponse: Codable {
+struct RatingDto: Codable {
     let source: String
     let value: String
 }
