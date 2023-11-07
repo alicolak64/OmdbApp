@@ -37,7 +37,7 @@ class HomeViewController: UIViewController, HomeViewModelDelegate {
     }
     
     func updateSearchResults(searchItems: [SearchItemDto]) {
-        //print(searchItems)
+        print(searchItems)
     }
 
 

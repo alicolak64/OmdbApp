@@ -103,7 +103,8 @@ class HomeViewModel {
                     }
                     
                 } else {
-                    
+                    self.searchItems = []
+                    self.representItems()
                 }
                 
                 
