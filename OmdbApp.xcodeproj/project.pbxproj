@@ -15,6 +15,11 @@
 		E6FC318C2AFA8DD70077325A /* OmdbAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC318B2AFA8DD70077325A /* OmdbAppTests.swift */; };
 		E6FC31962AFA8DD70077325A /* OmdbAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31952AFA8DD70077325A /* OmdbAppUITests.swift */; };
 		E6FC31982AFA8DD70077325A /* OmdbAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31972AFA8DD70077325A /* OmdbAppUITestsLaunchTests.swift */; };
+		E6FC31A82AFA917D0077325A /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31A72AFA917D0077325A /* AppConstants.swift */; };
+		E6FC31AA2AFA98F10077325A /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31A92AFA98F10077325A /* SearchResponse.swift */; };
+		E6FC31AC2AFA9C440077325A /* DetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31AB2AFA9C440077325A /* DetailResponse.swift */; };
+		E6FC31B12AFA9D800077325A /* OmdbService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31B02AFA9D800077325A /* OmdbService.swift */; };
+		E6FC31B32AFA9D8F0077325A /* OmdbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31B22AFA9D8F0077325A /* OmdbManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		E6FC31912AFA8DD70077325A /* OmdbAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OmdbAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FC31952AFA8DD70077325A /* OmdbAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmdbAppUITests.swift; sourceTree = "<group>"; };
 		E6FC31972AFA8DD70077325A /* OmdbAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmdbAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E6FC31A72AFA917D0077325A /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		E6FC31A92AFA98F10077325A /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		E6FC31AB2AFA9C440077325A /* DetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResponse.swift; sourceTree = "<group>"; };
+		E6FC31B02AFA9D800077325A /* OmdbService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmdbService.swift; sourceTree = "<group>"; };
+		E6FC31B22AFA9D8F0077325A /* OmdbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmdbManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +108,9 @@
 			isa = PBXGroup;
 			children = (
 				E6FC31A42AFA8DDE0077325A /* Helper */,
+				E6FC31A62AFA914F0077325A /* Constant */,
+				E6FC31A52AFA8FC10077325A /* Model */,
+				E6FC31AD2AFA9CC80077325A /* Service */,
 				E6FC31822AFA8DD60077325A /* Info.plist */,
 			);
 			path = OmdbApp;
@@ -130,6 +143,32 @@
 				E6FC317F2AFA8DD60077325A /* LaunchScreen.storyboard */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		E6FC31A52AFA8FC10077325A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E6FC31A92AFA98F10077325A /* SearchResponse.swift */,
+				E6FC31AB2AFA9C440077325A /* DetailResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E6FC31A62AFA914F0077325A /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				E6FC31A72AFA917D0077325A /* AppConstants.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		E6FC31AD2AFA9CC80077325A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E6FC31B02AFA9D800077325A /* OmdbService.swift */,
+				E6FC31B22AFA9D8F0077325A /* OmdbManager.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,8 +302,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6FC31792AFA8DD40077325A /* HomeViewController.swift in Sources */,
+				E6FC31B32AFA9D8F0077325A /* OmdbManager.swift in Sources */,
+				E6FC31AA2AFA98F10077325A /* SearchResponse.swift in Sources */,
 				E6FC31752AFA8DD40077325A /* AppDelegate.swift in Sources */,
 				E6FC31772AFA8DD40077325A /* SceneDelegate.swift in Sources */,
+				E6FC31A82AFA917D0077325A /* AppConstants.swift in Sources */,
+				E6FC31AC2AFA9C440077325A /* DetailResponse.swift in Sources */,
+				E6FC31B12AFA9D800077325A /* OmdbService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
