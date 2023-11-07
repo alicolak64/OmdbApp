@@ -85,7 +85,7 @@ class HomeViewModel {
             switch result {
             case .success(let response):
                                 
-                if response.response == "True" {
+                if AppConstantFunctions.isSuccessResponse(response: response) {
                     
                     if let totalResultsString = response.totalResults, let totalResults = Int(totalResultsString) {
                         
