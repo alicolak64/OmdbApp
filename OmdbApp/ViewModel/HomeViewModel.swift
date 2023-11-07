@@ -47,7 +47,7 @@ class HomeViewModel {
             }
         }
         
-        self.delegate?.updateSearchResults(searchItems: uniqueItems)
+        self.delegate?.updateSearchItems(searchItems: uniqueItems)
         
     }
     

@@ -17,5 +17,5 @@ enum ServiceError : Error {
 
 protocol OmdbService {
     func fetchSearchResponse(searchText: String, pageNumber: Int,completion: @escaping (Result<SearchResponse, ServiceError>) -> ())
-    func fetchDetailsResponse(imdbId: String, completion: @escaping (Result<DetailResponse, ServiceError>) -> ())
+    func fetchDetailsResponse(imdbId: String, completion: @escaping (Result<DetailItemResponse, ServiceError>) -> ())
 }

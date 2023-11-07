@@ -45,7 +45,7 @@ final class OmdbManager :  OmdbService {
         
     }
     
-    func fetchDetailsResponse(imdbId: String, completion: @escaping (Result<DetailResponse, ServiceError>) -> ()) {
+    func fetchDetailsResponse(imdbId: String, completion: @escaping (Result<DetailItemResponse, ServiceError>) -> ()) {
         
         if let url = URL(string: Constants.baseURL + Constants.imdbQuery + imdbId) {
             
@@ -55,7 +55,7 @@ final class OmdbManager :  OmdbService {
                 } else if let data = data {
                     
                                         
-                    let response = try? JSONDecoder().decode(DetailResponse.self, from: data)
+                    let response = try? JSONDecoder().decode(DetailItemResponse.self, from: data)
                                         
                     if let response = response {
                         completion(.success(response))

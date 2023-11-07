@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol DetailViewModelDelegate : AnyObject {
+    func updateItem(item: DetailItemDto)
+}

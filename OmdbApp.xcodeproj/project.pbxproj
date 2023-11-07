@@ -17,7 +17,7 @@
 		E6FC31982AFA8DD70077325A /* OmdbAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31972AFA8DD70077325A /* OmdbAppUITestsLaunchTests.swift */; };
 		E6FC31A82AFA917D0077325A /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31A72AFA917D0077325A /* AppConstants.swift */; };
 		E6FC31AA2AFA98F10077325A /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31A92AFA98F10077325A /* SearchResponse.swift */; };
-		E6FC31AC2AFA9C440077325A /* DetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31AB2AFA9C440077325A /* DetailResponse.swift */; };
+		E6FC31AC2AFA9C440077325A /* DetailItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31AB2AFA9C440077325A /* DetailItemResponse.swift */; };
 		E6FC31B12AFA9D800077325A /* OmdbService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31B02AFA9D800077325A /* OmdbService.swift */; };
 		E6FC31B32AFA9D8F0077325A /* OmdbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31B22AFA9D8F0077325A /* OmdbManager.swift */; };
 		E6FC31B62AFAA2190077325A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31B52AFAA2190077325A /* HomeViewModel.swift */; };
@@ -25,10 +25,12 @@
 		E6FC31BA2AFAA23E0077325A /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31B92AFAA23E0077325A /* DetailViewModel.swift */; };
 		E6FC31BC2AFAA2490077325A /* DetailViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31BB2AFAA2490077325A /* DetailViewModelDelegate.swift */; };
 		E6FC31BF2AFAA2E90077325A /* SearchItemDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31BE2AFAA2E90077325A /* SearchItemDto.swift */; };
-		E6FC31C12AFAA2F40077325A /* DetailDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31C02AFAA2F40077325A /* DetailDto.swift */; };
+		E6FC31C12AFAA2F40077325A /* DetailItemDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31C02AFAA2F40077325A /* DetailItemDto.swift */; };
 		E6FC31C32AFAB3EC0077325A /* AppConstantFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31C22AFAB3EC0077325A /* AppConstantFunctions.swift */; };
 		E6FC31C52AFAB4E20077325A /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31C42AFAB4E20077325A /* AppColors.swift */; };
 		E6FC31C82AFAB5860077325A /* GeneralExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31C72AFAB5860077325A /* GeneralExtensions.swift */; };
+		E6FC31CC2AFAD94B0077325A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31CB2AFAD94B0077325A /* DetailViewController.swift */; };
+		E6FC31CF2AFAD97A0077325A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E6FC31CE2AFAD97A0077325A /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +65,7 @@
 		E6FC31972AFA8DD70077325A /* OmdbAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmdbAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E6FC31A72AFA917D0077325A /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		E6FC31A92AFA98F10077325A /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
-		E6FC31AB2AFA9C440077325A /* DetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResponse.swift; sourceTree = "<group>"; };
+		E6FC31AB2AFA9C440077325A /* DetailItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemResponse.swift; sourceTree = "<group>"; };
 		E6FC31B02AFA9D800077325A /* OmdbService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmdbService.swift; sourceTree = "<group>"; };
 		E6FC31B22AFA9D8F0077325A /* OmdbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmdbManager.swift; sourceTree = "<group>"; };
 		E6FC31B52AFAA2190077325A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -71,10 +73,11 @@
 		E6FC31B92AFAA23E0077325A /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		E6FC31BB2AFAA2490077325A /* DetailViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelDelegate.swift; sourceTree = "<group>"; };
 		E6FC31BE2AFAA2E90077325A /* SearchItemDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemDto.swift; sourceTree = "<group>"; };
-		E6FC31C02AFAA2F40077325A /* DetailDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDto.swift; sourceTree = "<group>"; };
+		E6FC31C02AFAA2F40077325A /* DetailItemDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemDto.swift; sourceTree = "<group>"; };
 		E6FC31C22AFAB3EC0077325A /* AppConstantFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstantFunctions.swift; sourceTree = "<group>"; };
 		E6FC31C42AFAB4E20077325A /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		E6FC31C72AFAB5860077325A /* GeneralExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralExtensions.swift; sourceTree = "<group>"; };
+		E6FC31CB2AFAD94B0077325A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6FC31CF2AFAD97A0077325A /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				E6FC31A92AFA98F10077325A /* SearchResponse.swift */,
-				E6FC31AB2AFA9C440077325A /* DetailResponse.swift */,
+				E6FC31AB2AFA9C440077325A /* DetailItemResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,7 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				E6FC31BE2AFAA2E90077325A /* SearchItemDto.swift */,
-				E6FC31C02AFAA2F40077325A /* DetailDto.swift */,
+				E6FC31C02AFAA2F40077325A /* DetailItemDto.swift */,
 			);
 			path = Dto;
 			sourceTree = "<group>";
@@ -225,6 +229,7 @@
 		E6FC31C92AFABFCE0077325A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E6FC31D02AFAE08F0077325A /* Cell */,
 				E6FC31CA2AFABFDF0077325A /* ViewControler */,
 			);
 			path = View;
@@ -234,8 +239,16 @@
 			isa = PBXGroup;
 			children = (
 				E6FC31782AFA8DD40077325A /* HomeViewController.swift */,
+				E6FC31CB2AFAD94B0077325A /* DetailViewController.swift */,
 			);
 			path = ViewControler;
+			sourceTree = "<group>";
+		};
+		E6FC31D02AFAE08F0077325A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +267,9 @@
 			dependencies = (
 			);
 			name = OmdbApp;
+			packageProductDependencies = (
+				E6FC31CE2AFAD97A0077325A /* Kingfisher */,
+			);
 			productName = OmdbApp;
 			productReference = E6FC31712AFA8DD40077325A /* OmdbApp.app */;
 			productType = "com.apple.product-type.application";
@@ -326,6 +342,9 @@
 				Base,
 			);
 			mainGroup = E6FC31682AFA8DD40077325A;
+			packageReferences = (
+				E6FC31CD2AFAD97A0077325A /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = E6FC31722AFA8DD40077325A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -376,11 +395,12 @@
 				E6FC31BC2AFAA2490077325A /* DetailViewModelDelegate.swift in Sources */,
 				E6FC31B32AFA9D8F0077325A /* OmdbManager.swift in Sources */,
 				E6FC31AA2AFA98F10077325A /* SearchResponse.swift in Sources */,
-				E6FC31C12AFAA2F40077325A /* DetailDto.swift in Sources */,
+				E6FC31C12AFAA2F40077325A /* DetailItemDto.swift in Sources */,
+				E6FC31CC2AFAD94B0077325A /* DetailViewController.swift in Sources */,
 				E6FC31752AFA8DD40077325A /* AppDelegate.swift in Sources */,
 				E6FC31772AFA8DD40077325A /* SceneDelegate.swift in Sources */,
 				E6FC31A82AFA917D0077325A /* AppConstants.swift in Sources */,
-				E6FC31AC2AFA9C440077325A /* DetailResponse.swift in Sources */,
+				E6FC31AC2AFA9C440077325A /* DetailItemResponse.swift in Sources */,
 				E6FC31B82AFAA22F0077325A /* HomeViewModelDelegate.swift in Sources */,
 				E6FC31C52AFAB4E20077325A /* AppColors.swift in Sources */,
 				E6FC31BA2AFAA23E0077325A /* DetailViewModel.swift in Sources */,
@@ -715,6 +735,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E6FC31CD2AFAD97A0077325A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E6FC31CE2AFAD97A0077325A /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6FC31CD2AFAD97A0077325A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E6FC31692AFA8DD40077325A /* Project object */;
 }

@@ -1,21 +1,27 @@
 //
-//  ViewController.swift
+//  DetailViewController.swift
 //  OmdbApp
 //
 //  Created by Ali Çolak on 7.11.2023.
 //
 
-import UIKit
 
-class HomeViewController: UIViewController, HomeViewModelDelegate {
+import UIKit
+import Kingfisher
+
+class DetailViewController: UIViewController, DetailViewModelDelegate {
     
-    let viewModel : HomeViewModel
     
-    var items : [SearchItemDto] = []
     
-    var lastRequestTime: Date?
+    let viewModel : DetailViewModel
     
-    init(viewModel : HomeViewModel) {
+    var item : DetailItemDto?
+    var itemImdbId : Int?
+    var items : [DetailItemDto] = []
+    
+    var currentItemIndex : Int?
+    
+    init(viewModel : DetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         self.viewModel.delegate = self
@@ -30,16 +36,15 @@ class HomeViewController: UIViewController, HomeViewModelDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .red
+        self.viewModel.getItem(imdbId: "tt3896198")
     }
     
     override func viewDidLayoutSubviews() {
         //setConstraints()
     }
     
-    func updateSearchItems(searchItems: [SearchItemDto]) {
-        print(searchItems.count)
+    func updateItem(item: DetailItemDto) {
+        //print(item)
     }
-
-
+    
 }
-

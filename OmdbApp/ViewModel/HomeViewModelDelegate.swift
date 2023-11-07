@@ -8,5 +8,5 @@
 import Foundation
 
 protocol HomeViewModelDelegate: AnyObject{
-    func updateSearchResults(searchItems: [SearchItemDto])
+    func updateSearchItems(searchItems: [SearchItemDto])
 }
