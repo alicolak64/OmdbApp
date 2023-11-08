@@ -44,7 +44,7 @@ class HomeViewController: UIViewController, HomeViewModelDelegate {
     let whiteView : UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = AppColors.backgroundColor
+        view.backgroundColor = AppColors.blackColor
         view.layer.cornerRadius = 10
         view.layer.shadowColor = UIColor.gray.cgColor
         return view
@@ -65,7 +65,7 @@ class HomeViewController: UIViewController, HomeViewModelDelegate {
     var errorLabel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .red
+        label.textColor = AppColors.appMainColor
         label.isHidden = true
         label.font = AppFonts.titleFont
         return label

@@ -64,6 +64,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         let label = UILabel()
         label.font = AppFonts.regularBoldFont
         label.textColor = AppColors.blackColor
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
