@@ -11,13 +11,11 @@ import Kingfisher
 
 class DetailViewController: UIViewController, DetailViewModelDelegate {
     
-    
-    
     let viewModel : DetailViewModel
     
     var item : DetailItemDto?
-    var itemImdbId : Int?
-    var items : [DetailItemDto] = []
+    var itemImdbId : String?
+    var items : [SearchItemDto] = []
     
     var currentItemIndex : Int?
     
@@ -44,7 +42,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
     }
     
     func updateItem(item: DetailItemDto) {
-        //print(item)
+        print(item)
     }
     
 }

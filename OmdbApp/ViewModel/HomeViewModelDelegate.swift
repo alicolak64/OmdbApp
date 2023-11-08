@@ -9,4 +9,5 @@ import Foundation
 
 protocol HomeViewModelDelegate: AnyObject{
     func updateSearchItems(searchItems: [SearchItemDto])
+    func movieNotFound()
 }

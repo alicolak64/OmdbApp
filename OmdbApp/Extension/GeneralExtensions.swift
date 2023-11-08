@@ -33,6 +33,17 @@ extension UIColor {
     }
 }
 
+extension UIImage {
+    func resized(toSize newSize: CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
+        draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage ?? self
+    }
+}
+
+
 
 extension UIView {
     func addSubviews(_ views : [UIView]){

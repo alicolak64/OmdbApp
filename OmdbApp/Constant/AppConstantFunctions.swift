@@ -16,6 +16,8 @@ struct AppConstantFunctions {
             return AppColors.seriesTypeColor!
         case AppConstants.episodeTypeText:
             return AppColors.episodeTypeColor!
+        case AppConstants.gameTypeText:
+            return AppColors.gameTypeColor!
         default:
             return AppColors.blackColor!
         }

@@ -49,6 +49,10 @@ class HomeViewModel {
         
         self.delegate?.updateSearchItems(searchItems: uniqueItems)
         
+        if uniqueItems.isEmpty {
+            self.delegate?.movieNotFound()
+        }
+        
     }
     
     func searchItems(text: String) {
@@ -60,8 +64,10 @@ class HomeViewModel {
             pageNumber = 1
             fetchItems()
             
+        } else {
+            searchItems = []
+            representItems()
         }
-        
     }
     
     func getNextPageItems() {
