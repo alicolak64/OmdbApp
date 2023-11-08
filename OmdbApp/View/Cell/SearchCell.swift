@@ -110,7 +110,7 @@ class SearchCell: UICollectionViewCell {
             itemImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             itemImage.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10),
             itemImage.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10),
-            itemImage.heightAnchor.constraint(equalToConstant: contentView.frame.height * 0.6),
+            itemImage.heightAnchor.constraint(equalToConstant: contentView.frame.height * 0.8),
             
             itemName.topAnchor.constraint(equalTo: itemImage.bottomAnchor, constant: 15),
             itemName.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20),

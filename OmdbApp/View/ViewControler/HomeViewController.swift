@@ -52,7 +52,7 @@ class HomeViewController: UIViewController, HomeViewModelDelegate {
     
     lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: AppConstants.deviceWidth * 0.9, height: AppConstants.deviceHeight * 0.3)
+        layout.itemSize = CGSize(width: AppConstants.deviceWidth * 0.9, height: AppConstants.deviceWidth * 1.25)
         layout.minimumInteritemSpacing = 10
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
