@@ -5,65 +5,65 @@
 //  Created by Ali Çolak on 7.11.2023.
 //
 
-import Foundation
+import UIKit
 
 struct DetailItemDto: Codable {
     
     let item : DetailItemResponse
     
     var title: String {
-        item.title
+        item.title ?? "No Title"
     }
     
     var rated: String {
-        item.rated
+        item.rated ?? "No Rated"
     }
     
     var released: String {
-        item.released
+        item.released ?? "No Time"
     }
     
     var runtime: String {
-        item.runtime
+        item.runtime ?? "No Min"
     }
     
     var genre: String {
-        item.genre
+        item.genre ?? "No Genre, "
     }
     
     var director: String {
-        item.director
+        item.director ?? "No Director"
     }
     
     var writer: String {
-        item.writer
+        item.writer ?? "No Writer"
     }
     
     var actors: String {
-        item.actors
+        item.actors ?? "No Actors"
     }
     
     var plot : String {
-        item.plot
+        item.plot ?? "No Desc"
     }
     
     var language : String {
-        item.language
+        item.language ?? "No Lang"
     }
     
     var country : String {
-        item.country
+        item.country ?? "No Country"
     }
     
     var awards : String {
-        item.awards
+        item.awards ?? "No Awards"
     }
     
     var poster: String {
         if item.poster == AppConstants.notAvaliableApiText {
             return AppConstants.noImageUrl
         } else {
-            return item.poster
+            return item.poster ?? AppConstants.noImageUrl
         }
     }
     
@@ -71,8 +71,12 @@ struct DetailItemDto: Codable {
         return item.ratings?.map { RatingDto(source: $0.source, value: $0.value) }
     }
     
+    var imdbRating: String {
+        item.imdbRating ?? "0.0"
+    }
+    
     var imdbVotes : String {
-        item.imdbVotes
+        item.imdbVotes ?? "No Imdb Votes"
     }
     
     var imdbID : String {
@@ -80,14 +84,18 @@ struct DetailItemDto: Codable {
     }
     
     var type : String {
-        guard let firstCharacter = item.type.first else {
+        guard let firstCharacter = item.type?.first else {
             return ""
         }
-        return String(firstCharacter).uppercased() + item.type.dropFirst().lowercased()
+        return String(firstCharacter).uppercased() + (item.type?.dropFirst().lowercased())!
+    }
+    
+    var typeColor : UIColor {
+        AppConstantFunctions.getTypeColor(forType: item.type ?? "")
     }
     
     var boxOffice: String {
-        item.boxOffice
+        item.boxOffice ?? "No Box Office"
     }
 }
 

@@ -17,4 +17,6 @@ struct AppColors {
     static let whiteColor = UIColor(hex: "#FFFFFF")
     static let placeHolderColor  = UIColor(hex: "#666666")
     static let backgroundColor = UIColor(hex: "#c7c7cb")
+    static let genreViewColor = UIColor(hex: "#dde2ff")
+    static let genreTextColor = UIColor(hex: "#84a0e3")
 }

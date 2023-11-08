@@ -34,7 +34,7 @@ class SearchCell: UICollectionViewCell {
     private let itemTypeContainerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.cornerRadius = 15
+        view.layer.cornerRadius = 10
         return view
     }()
     
