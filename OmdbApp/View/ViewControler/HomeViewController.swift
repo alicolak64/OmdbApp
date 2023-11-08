@@ -52,13 +52,12 @@ class HomeViewController: UIViewController, HomeViewModelDelegate {
     
     lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: AppConstants.deviceWidth * 0.9, height: AppConstants.deviceWidth * 1.25)
+        layout.itemSize = CGSize(width: AppConstants.deviceWidth * 0.9, height: AppConstants.deviceWidth * 0.6)
         layout.minimumInteritemSpacing = 10
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = AppColors.backgroundColor
-        collectionView.layer.cornerRadius = 15
+        collectionView.backgroundColor = AppColors.blackColor
         
         return collectionView
     }()
@@ -86,7 +85,7 @@ class HomeViewController: UIViewController, HomeViewModelDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = AppColors.backgroundColor
+        view.backgroundColor = AppColors.blackColor
         initalConfig()
     }
     

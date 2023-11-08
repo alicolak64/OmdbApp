@@ -11,13 +11,12 @@ extension HomeViewController {
     
     func initalConfig() {
         
-        let logoImage = AppIcons.appLogo?.resized(toSize: CGSize(width: 32, height: 32)).withTintColor(AppColors.blackColor!, renderingMode: .alwaysOriginal)
+        let logoImage = AppIcons.appLogo?.resized(toSize: CGSize(width: 32, height: 32)).withTintColor(AppColors.appMainColor!, renderingMode: .alwaysOriginal)
         let barLogo = UIBarButtonItem(image: logoImage, style: .plain, target: self, action: nil)
         let appTitle = UIBarButtonItem(title: AppTexts.appName, style: .plain, target: self, action: nil)
         
-        appTitle.setTitleTextAttributes([.foregroundColor : AppColors.blackColor!, .font : AppFonts.titleBoldFont ], for: .normal)
-        
-        
+        appTitle.setTitleTextAttributes([.foregroundColor : AppColors.appMainColor!, .font : AppFonts.titleBoldFont ], for: .normal)
+
         navigationController?.navigationBar.topItem?.leftBarButtonItems = [barLogo,appTitle]
         
         whiteView.addSubview(collectionView)
@@ -43,10 +42,10 @@ extension HomeViewController {
             whiteView.rightAnchor.constraint(equalTo: view.rightAnchor,constant: -10),
             whiteView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -10),
             
-            collectionView.topAnchor.constraint(equalTo: whiteView.topAnchor,constant: 10),
-            collectionView.leftAnchor.constraint(equalTo: whiteView.leftAnchor,constant: 5),
-            collectionView.rightAnchor.constraint(equalTo: whiteView.rightAnchor,constant: -5),
-            collectionView.bottomAnchor.constraint(equalTo: whiteView.bottomAnchor,constant: -10),
+            collectionView.topAnchor.constraint(equalTo: whiteView.topAnchor),
+            collectionView.leftAnchor.constraint(equalTo: whiteView.leftAnchor),
+            collectionView.rightAnchor.constraint(equalTo: whiteView.rightAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: whiteView.bottomAnchor),
             
             errorLabel.centerXAnchor.constraint(equalTo: whiteView.centerXAnchor),
             errorLabel.centerYAnchor.constraint(equalTo: whiteView.centerYAnchor),

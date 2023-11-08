@@ -25,7 +25,7 @@ class SearchCell: UICollectionViewCell {
         let label = UILabel()
         label.textAlignment = .center
         label.font = AppFonts.titleFont
-        label.textColor = AppColors.blackColor
+        label.textColor = AppColors.appMainColor
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -60,7 +60,11 @@ class SearchCell: UICollectionViewCell {
         super.init(frame: frame)
         
         contentView.layer.masksToBounds = false
-        contentView.backgroundColor = AppColors.whiteColor
+        contentView.backgroundColor = AppColors.blackColor
+        contentView.layer.cornerRadius = 10
+        contentView.layer.borderColor = AppColors.backgroundColor?.cgColor
+        contentView.layer.borderWidth = 0.5
+       
         
         addCellComponents()
         setCellLayouts()
@@ -107,10 +111,10 @@ class SearchCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             
-            itemImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            itemImage.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10),
-            itemImage.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10),
-            itemImage.heightAnchor.constraint(equalToConstant: contentView.frame.height * 0.8),
+            itemImage.topAnchor.constraint(equalTo: contentView.topAnchor),
+            itemImage.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+            itemImage.rightAnchor.constraint(equalTo: contentView.rightAnchor),
+            itemImage.heightAnchor.constraint(equalToConstant: contentView.frame.height * 0.6),
             
             itemName.topAnchor.constraint(equalTo: itemImage.bottomAnchor, constant: 15),
             itemName.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20),
