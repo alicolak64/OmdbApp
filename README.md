@@ -12,7 +12,7 @@ Also developed for Coderspace-Pazarama iOS Bootcamp Final Project.
 - [x] Protocol Oriented Programming
 - [x] Delegate Pattern
 - [x] Dependency Injection
-- [x] Infinite Scrolling
+- [x] Pagination with Infinite Scroll
 - [x] URLSession
 - [x] Dto
 - [x] Unit Test
