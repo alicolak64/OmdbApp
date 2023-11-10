@@ -8,7 +8,7 @@ Also developed for Coderspace-Pazarama iOS Bootcamp Final Project.
 ## Features
 
 - [x] Programmatic UI
-- [x] MVVM architecture
+- [x] MVVM Architecture
 - [x] Protocol Oriented Programming
 - [x] Delegate Pattern
 - [x] Dependency Injection
@@ -30,11 +30,10 @@ Also developed for Coderspace-Pazarama iOS Bootcamp Final Project.
 The data source is [OMDB Api](https://www.omdbapi.com/). 
 
 ## App Features
-- Since Omdbapi does not have a list of popular movies, I took the id of the top 10 popular movies from imdb and listed them on the main screen.
-- Search by movie title is available
-- Infinite scrolling is available with pagination.
-- View the detail page when you click on the relevant movie.
-
+- I initiated the main screen by specifying a word as the initial search since there is no list of popular movies in the Omdb API. (I chose "Batman" as the initial search term.)
+- Users can search for movies by title, making it easy to find specific films.
+- Infinite scrolling is implemented with pagination, allowing users to seamlessly explore a large number of search results.
+- Clicking on a movie title opens a detailed page where users can access more information about the selected movie.
 
 ## Screenshots
 | Home Screen 1| Home Screen 2| Home Screen 3| Home Screen 4| Home Screen 5| Detail Screen 1| Detail Screen 2|
