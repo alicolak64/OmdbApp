@@ -19,7 +19,7 @@ extension UIColor {
         }
         let scanner = Scanner(string: pureString)
         var hexNumber: UInt64 = 0
-
+        
         if scanner.scanHexInt64(&hexNumber) {
             self.init(
                 red: CGFloat((hexNumber & 0xFF0000) >> 16) / 255.0,

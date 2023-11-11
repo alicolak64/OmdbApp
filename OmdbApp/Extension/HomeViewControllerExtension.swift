@@ -16,7 +16,7 @@ extension HomeViewController {
         let appTitle = UIBarButtonItem(title: AppTexts.appName, style: .plain, target: self, action: nil)
         
         appTitle.setTitleTextAttributes([.foregroundColor : AppColors.appMainColor!, .font : AppFonts.titleBoldFont ], for: .normal)
-
+        
         navigationController?.navigationBar.topItem?.leftBarButtonItems = [barLogo,appTitle]
         
         whiteView.addSubview(collectionView)

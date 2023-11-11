@@ -90,7 +90,7 @@ class HomeViewModel {
             
             switch result {
             case .success(let response):
-                                
+                
                 if AppConstantFunctions.isSuccessResponse(response: response) {
                     
                     if let totalResultsString = response.totalResults, let totalResults = Int(totalResultsString) {
@@ -98,7 +98,7 @@ class HomeViewModel {
                         self.pageNumber = self.pageNumber + 1
                         
                         self.totalResults = totalResults
-                                                
+                        
                         if let items = response.search {
                             let newItems = items.map(SearchItemDto.init)
                             self.searchItems.append(contentsOf: newItems)

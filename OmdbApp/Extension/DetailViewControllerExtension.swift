@@ -46,7 +46,7 @@ extension DetailViewController {
         contentView.addSubview(languageTitleLabel)
         contentView.addSubview(ratingTitleLabel)
         contentView.addSubview(releasedTitleLabel)
-
+        
         contentView.addSubview(lengthValueLabel)
         contentView.addSubview(languageValueLabel)
         contentView.addSubview(ratingValueLabel)
@@ -78,8 +78,8 @@ extension DetailViewController {
         
         contentView.addSubview(ratingsTitleLabel)
         contentView.addSubview(ratingCollectionView)
-
-
+        
+        
         genreCollectionView.delegate = self
         genreCollectionView.dataSource = self
         genreCollectionView.register(GenreCell.self, forCellWithReuseIdentifier: GenreCell.identifier)
@@ -87,7 +87,7 @@ extension DetailViewController {
         ratingCollectionView.delegate = self
         ratingCollectionView.dataSource = self
         ratingCollectionView.register(RatingCell.self, forCellWithReuseIdentifier: RatingCell.identifier)
-                
+        
     }
     
     func setConstraints() {
@@ -174,7 +174,7 @@ extension DetailViewController {
             descriptionValueLabel.topAnchor.constraint(equalTo: descriptionTitleLabel.bottomAnchor, constant: 10),
             descriptionValueLabel.leftAnchor.constraint(equalTo: itemNameLabel.leftAnchor),
             descriptionValueLabel.rightAnchor.constraint(equalTo: itemNameLabel.rightAnchor),
-
+            
             countryTitleLabel.topAnchor.constraint(equalTo: descriptionValueLabel.bottomAnchor, constant: 20),
             countryTitleLabel.leftAnchor.constraint(equalTo: itemNameLabel.leftAnchor),
             
@@ -242,7 +242,7 @@ extension DetailViewController {
     }
     
     @objc func backItemButtonTapped() {
-                
+        
         let previousImdbId = items[(currentItemIndex ?? 0) - 1].imdbId
         
         itemImdbId = previousImdbId
@@ -252,7 +252,7 @@ extension DetailViewController {
     }
     
     @objc func nextItemButtonTapped() {
-                        
+        
         let previousImdbId = items[(currentItemIndex ?? 0) + 1].imdbId
         
         itemImdbId = previousImdbId

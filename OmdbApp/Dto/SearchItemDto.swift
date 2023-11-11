@@ -10,7 +10,7 @@ import UIKit
 struct SearchItemDto: Codable {
     
     let item : SearchItemResponse
-
+    
     var title: String {
         item.title
     }

@@ -121,7 +121,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         collectionView.isScrollEnabled = false
         collectionView.tag = 1
         collectionView.accessibilityIdentifier = "OmdbApp.DetailView.genreCollectionView"
-
+        
         
         return collectionView
     }()
@@ -420,7 +420,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         self.item = item
         
         self.currentItemIndex = items.firstIndex(where: { $0.imdbId == itemImdbId })
-                
+        
         DispatchQueue.main.async { [weak self] in
             
             guard let self else {

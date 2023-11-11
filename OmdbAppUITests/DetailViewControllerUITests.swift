@@ -260,97 +260,97 @@ final class DetailViewControllerUITests: XCTestCase {
         XCTAssertTrue(backButton.exists, "Back button not found.")
         
         backButton.tap()
-
+        
         XCTAssertTrue(collectionView.exists, "Collection View not found.")
-
+        
         
     }
     
     func testExistingBackItemButon1() throws {
         
-
+        
         XCTAssertTrue(backItemButton.exists, "Back Item Button not found.")
         
         backItemButton.tap()
-                
+        
         XCTAssertTrue(title.exists, "Title Text not found.")
-
+        
         XCTAssertEqual(title.label, "Batman v Superman: Dawn of Justice", "Title Text is not equal to Batman v Superman: Dawn of Justice")
         
         XCTAssertTrue(backItemButton.isEnabled)
         XCTAssertTrue(nextItemButton.isEnabled)
-
-
+        
+        
     }
     
     func testExistingBackItemButon2() throws {
         
-
+        
         XCTAssertTrue(backItemButton.exists, "Back Item Button not found.")
         
         backItemButton.tap()
         nextItemButton.tap()
         backItemButton.tap()
-                        
+        
         XCTAssertTrue(title.exists, "Title Text not found.")
-
+        
         XCTAssertEqual(title.label, "Batman v Superman: Dawn of Justice", "Title Text is not equal to Batman v Superman: Dawn of Justice")
         
         XCTAssertTrue(backItemButton.isEnabled)
         XCTAssertTrue(nextItemButton.isEnabled)
-
+        
     }
     
     func testExistingBackItemButtonIsEnabled() throws {
         
-
+        
         XCTAssertTrue(backItemButton.exists, "Back Item Button not found.")
         
         backItemButton.tap()
         backItemButton.tap()
-                        
+        
         XCTAssertFalse(backItemButton.isAccessibilityElement)
         XCTAssertTrue(nextItemButton.isEnabled)
-
+        
     }
-
+    
     func testExistingNextItemButon1() throws {
         
-
+        
         XCTAssertTrue(nextItemButton.exists, "Back Item Button not found.")
         
         nextItemButton.tap()
-                
+        
         XCTAssertTrue(title.exists, "Title Text not found.")
-
+        
         XCTAssertEqual(title.label, "Batman", "Title Text is not equal to Batman")
         
         XCTAssertTrue(backItemButton.isEnabled)
         XCTAssertTrue(nextItemButton.isEnabled)
-
+        
     }
     
     func testExistingNextItemButon2() throws {
         
-
+        
         XCTAssertTrue(nextItemButton.exists, "Back Item Button not found.")
         
         nextItemButton.tap()
         nextItemButton.tap()
-                
+        
         XCTAssertTrue(title.exists, "Title Text not found.")
-
+        
         XCTAssertEqual(title.label, "Batman Returns", "Title Text is not equal to Batman Returns")
         
         XCTAssertTrue(backItemButton.isEnabled)
         XCTAssertTrue(nextItemButton.isEnabled)
-
+        
     }
     
     
     func testExistingNextItemButtonIsEnabled() throws {
         
-
+        
         XCTAssertTrue(backItemButton.exists, "Back Item Button not found.")
         
         nextItemButton.tap()
@@ -360,11 +360,11 @@ final class DetailViewControllerUITests: XCTestCase {
         nextItemButton.tap()
         nextItemButton.tap()
         nextItemButton.tap()
-
-                        
+        
+        
         XCTAssertTrue(backItemButton.isEnabled)
         XCTAssertFalse(nextItemButton.isAccessibilityElement)
-
+        
     }
     
     

@@ -27,7 +27,7 @@ final class HomeViewControllerUITests: XCTestCase {
     }
     
     func testExistsCollectionView() throws {
-                
+        
         XCTAssertTrue(collectionView.exists, "Collection View not found.")
     }
     
@@ -98,7 +98,7 @@ final class HomeViewControllerUITests: XCTestCase {
     }
     
     func testMovieNotFoundErrorVisible() throws {
-
+        
         let searchText = "Batmanman"
         
         searchBar.tap()
@@ -147,7 +147,7 @@ final class HomeViewControllerUITests: XCTestCase {
         searchBar.tap()
         searchBar.clearAndEnterText(text: searchText)
         
-            
+        
         collectionView.cells.otherElements.containing(.staticText, identifier: "Fight Club").element.swipeUp()
         
         

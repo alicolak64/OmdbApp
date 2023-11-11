@@ -64,7 +64,7 @@ class SearchCell: UICollectionViewCell {
         contentView.layer.cornerRadius = 10
         contentView.layer.borderColor = AppColors.backgroundColor?.cgColor
         contentView.layer.borderWidth = 0.5
-       
+        
         
         addCellComponents()
         setCellLayouts()
@@ -101,7 +101,7 @@ class SearchCell: UICollectionViewCell {
         contentView.addSubview(itemTypeContainerView)
         
         itemTypeContainerView.addSubview(itemTypeLabel)
-
+        
         contentView.addSubview(itemyYearLabel)
         
     }

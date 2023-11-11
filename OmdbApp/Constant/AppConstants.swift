@@ -25,5 +25,5 @@ struct AppConstants {
     static let seriesTypeText = "series"
     static let episodeTypeText = "episode"
     static let gameTypeText = "game"
-
+    
 }
