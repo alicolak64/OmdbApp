@@ -16,6 +16,7 @@ Also developed for Coderspace-Pazarama iOS Bootcamp Final Project.
 - [x] URLSession
 - [x] Dto
 - [x] Unit Test
+- [x] UI Test
 - [x] Custom Views
 - [x] Collection View
 - [x] Custom Collection View Cells
