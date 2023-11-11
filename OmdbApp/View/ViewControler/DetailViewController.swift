@@ -25,6 +25,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.layer.masksToBounds = true
+        image.accessibilityIdentifier = "OmdbApp.DetailView.itemImage"
         return image
     }()
     
@@ -34,6 +35,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         button.tintColor = AppColors.whiteColor
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(backItemButtonTapped), for: .touchUpInside)
+        button.accessibilityIdentifier = "OmdbApp.DetailView.backItemButton"
         return button
     }()
     
@@ -43,6 +45,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         button.tintColor = AppColors.whiteColor
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(nextItemButtonTapped), for: .touchUpInside)
+        button.accessibilityIdentifier = "OmdbApp.DetailView.nextItemButton"
         return button
     }()
     
@@ -66,6 +69,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.textColor = AppColors.blackColor
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.itemNameLabel"
         return label
     }()
     
@@ -74,6 +78,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         let imageView = UIImageView(image: image)
         imageView.tintColor = AppColors.appMainColor
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.accessibilityIdentifier = "OmdbApp.DetailView.imdbRatingIcon"
         return imageView
     }()
     
@@ -83,6 +88,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.font = AppFonts.placeholderFont
         label.textColor = AppColors.placeHolderColor
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.imdbRatingLabel"
         return label
     }()
     
@@ -90,6 +96,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 10
+        view.accessibilityIdentifier = "OmdbApp.DetailView.itemTypeContainerView"
         return view
     }()
     
@@ -99,6 +106,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.font = AppFonts.mediumFont
         label.textColor = AppColors.blackColor
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.itemTypeLabel"
         return label
     }()
     
@@ -112,6 +120,8 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         collectionView.backgroundColor = AppColors.whiteColor
         collectionView.isScrollEnabled = false
         collectionView.tag = 1
+        collectionView.accessibilityIdentifier = "OmdbApp.DetailView.genreCollectionView"
+
         
         return collectionView
     }()
@@ -120,8 +130,9 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         let label = UILabel()
         label.font = AppFonts.mediumFont
         label.textColor = AppColors.placeHolderColor
-        label.text = "Lenght"
+        label.text = "Length"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.lengthTitleLabel"
         return label
     }()
     
@@ -130,6 +141,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.font = AppFonts.mediumFont
         label.textColor = AppColors.blackColor
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.lengthValueLabel"
         return label
     }()
     
@@ -139,6 +151,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.textColor = AppColors.placeHolderColor
         label.text = "Language"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.languageTitleLabel"
         return label
     }()
     
@@ -149,6 +162,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.languageValueLabel"
         return label
     }()
     
@@ -158,6 +172,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.textColor = AppColors.placeHolderColor
         label.text = "Rating"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.ratingTitleLabel"
         return label
     }()
     
@@ -166,6 +181,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.font = AppFonts.mediumFont
         label.textColor = AppColors.blackColor
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.ratingValueLabel"
         return label
     }()
     
@@ -175,6 +191,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.textColor = AppColors.placeHolderColor
         label.text = "Released"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.releasedTitleLabel"
         return label
     }()
     
@@ -183,6 +200,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.font = AppFonts.mediumFont
         label.textColor = AppColors.blackColor
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.releasedValueLabel"
         return label
     }()
     
@@ -192,6 +210,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.textColor = AppColors.blackColor
         label.text = "Description"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.descriptionTitleLabel"
         return label
     }()
     
@@ -202,6 +221,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.descriptionValueLabel"
         return label
     }()
     
@@ -211,6 +231,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.textColor = AppColors.blackColor
         label.text = "Country:"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.countryTitleLabel"
         return label
     }()
     
@@ -220,6 +241,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.textColor = AppColors.placeHolderColor
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.countryValueLabel"
         return label
     }()
     
@@ -229,6 +251,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.textColor = AppColors.blackColor
         label.text = "Director:"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.directorTitleLabel"
         return label
     }()
     
@@ -238,6 +261,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.textColor = AppColors.placeHolderColor
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.directorValueLabel"
         return label
     }()
     
@@ -247,6 +271,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.textColor = AppColors.blackColor
         label.text = "Writer:"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.writerTitleLabel"
         return label
     }()
     
@@ -256,6 +281,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.textColor = AppColors.placeHolderColor
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.writerValueLabel"
         return label
     }()
     
@@ -265,6 +291,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.textColor = AppColors.blackColor
         label.text = "Actor:"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.actorTitleLabel"
         return label
     }()
     
@@ -274,6 +301,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.textColor = AppColors.placeHolderColor
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.actorValueLabel"
         return label
     }()
     
@@ -283,6 +311,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.textColor = AppColors.blackColor
         label.text = "Award:"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.awardTitleLabel"
         return label
     }()
     
@@ -292,6 +321,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.textColor = AppColors.placeHolderColor
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.awardValueLabel"
         return label
     }()
     
@@ -301,6 +331,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.textColor = AppColors.blackColor
         label.text = "IMDb Votes:"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.imdbVotesTitleLabel"
         return label
     }()
     
@@ -309,6 +340,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.font = AppFonts.largeFont
         label.textColor = AppColors.placeHolderColor
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.imdbVotesValueLabel"
         return label
     }()
     
@@ -318,6 +350,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.textColor = AppColors.blackColor
         label.text = "Box Offices:"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.boxOfficesTitleLabel"
         return label
     }()
     
@@ -326,6 +359,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.font = AppFonts.largeFont
         label.textColor = AppColors.placeHolderColor
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.boxOfficesValueLabel"
         return label
     }()
     
@@ -335,6 +369,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         label.textColor = AppColors.blackColor
         label.text = "Ratings:"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "OmdbApp.DetailView.ratingsTitleLabel"
         return label
     }()
     
@@ -349,6 +384,7 @@ class DetailViewController: UIViewController, DetailViewModelDelegate {
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = AppColors.whiteColor
         collectionView.tag = 2
+        collectionView.accessibilityIdentifier = "OmdbApp.DetailView.ratingCollectionView"
         
         return collectionView
     }()

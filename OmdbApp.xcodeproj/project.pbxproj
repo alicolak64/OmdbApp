@@ -11,13 +11,14 @@
 		E6BD3E542AFB81C200FAEB77 /* DetailViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BD3E532AFB81C200FAEB77 /* DetailViewControllerExtension.swift */; };
 		E6BD3E562AFB9C8200FAEB77 /* GenreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BD3E552AFB9C8200FAEB77 /* GenreCell.swift */; };
 		E6BD3E582AFBBF5D00FAEB77 /* RatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BD3E572AFBBF5D00FAEB77 /* RatingCell.swift */; };
+		E6BD5F3D2AFFC4FE008801FE /* DetailViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BD5F3C2AFFC4FE008801FE /* DetailViewControllerUITests.swift */; };
 		E6FC31752AFA8DD40077325A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31742AFA8DD40077325A /* AppDelegate.swift */; };
 		E6FC31772AFA8DD40077325A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31762AFA8DD40077325A /* SceneDelegate.swift */; };
 		E6FC31792AFA8DD40077325A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31782AFA8DD40077325A /* HomeViewController.swift */; };
 		E6FC317E2AFA8DD60077325A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6FC317D2AFA8DD60077325A /* Assets.xcassets */; };
 		E6FC31812AFA8DD60077325A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FC317F2AFA8DD60077325A /* LaunchScreen.storyboard */; };
 		E6FC318C2AFA8DD70077325A /* OmdbAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC318B2AFA8DD70077325A /* OmdbAppTests.swift */; };
-		E6FC31962AFA8DD70077325A /* OmdbAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31952AFA8DD70077325A /* OmdbAppUITests.swift */; };
+		E6FC31962AFA8DD70077325A /* HomeViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31952AFA8DD70077325A /* HomeViewControllerUITests.swift */; };
 		E6FC31982AFA8DD70077325A /* OmdbAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31972AFA8DD70077325A /* OmdbAppUITestsLaunchTests.swift */; };
 		E6FC31A82AFA917D0077325A /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31A72AFA917D0077325A /* AppConstants.swift */; };
 		E6FC31AA2AFA98F10077325A /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31A92AFA98F10077325A /* SearchResponse.swift */; };
@@ -63,6 +64,7 @@
 		E6BD3E532AFB81C200FAEB77 /* DetailViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerExtension.swift; sourceTree = "<group>"; };
 		E6BD3E552AFB9C8200FAEB77 /* GenreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCell.swift; sourceTree = "<group>"; };
 		E6BD3E572AFBBF5D00FAEB77 /* RatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCell.swift; sourceTree = "<group>"; };
+		E6BD5F3C2AFFC4FE008801FE /* DetailViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerUITests.swift; sourceTree = "<group>"; };
 		E6FC31712AFA8DD40077325A /* OmdbApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmdbApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FC31742AFA8DD40077325A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6FC31762AFA8DD40077325A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +75,7 @@
 		E6FC31872AFA8DD70077325A /* OmdbAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OmdbAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FC318B2AFA8DD70077325A /* OmdbAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmdbAppTests.swift; sourceTree = "<group>"; };
 		E6FC31912AFA8DD70077325A /* OmdbAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OmdbAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6FC31952AFA8DD70077325A /* OmdbAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmdbAppUITests.swift; sourceTree = "<group>"; };
+		E6FC31952AFA8DD70077325A /* HomeViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerUITests.swift; sourceTree = "<group>"; };
 		E6FC31972AFA8DD70077325A /* OmdbAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmdbAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E6FC31A72AFA917D0077325A /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		E6FC31A92AFA98F10077325A /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
@@ -169,8 +171,9 @@
 		E6FC31942AFA8DD70077325A /* OmdbAppUITests */ = {
 			isa = PBXGroup;
 			children = (
-				E6FC31952AFA8DD70077325A /* OmdbAppUITests.swift */,
+				E6FC31952AFA8DD70077325A /* HomeViewControllerUITests.swift */,
 				E6FC31972AFA8DD70077325A /* OmdbAppUITestsLaunchTests.swift */,
+				E6BD5F3C2AFFC4FE008801FE /* DetailViewControllerUITests.swift */,
 			);
 			path = OmdbAppUITests;
 			sourceTree = "<group>";
@@ -453,7 +456,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6FC31982AFA8DD70077325A /* OmdbAppUITestsLaunchTests.swift in Sources */,
-				E6FC31962AFA8DD70077325A /* OmdbAppUITests.swift in Sources */,
+				E6FC31962AFA8DD70077325A /* HomeViewControllerUITests.swift in Sources */,
+				E6BD5F3D2AFFC4FE008801FE /* DetailViewControllerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,8 +618,7 @@
 				INFOPLIST_FILE = OmdbApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -640,8 +643,7 @@
 				INFOPLIST_FILE = OmdbApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

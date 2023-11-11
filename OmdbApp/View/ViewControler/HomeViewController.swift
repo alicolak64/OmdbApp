@@ -58,6 +58,7 @@ class HomeViewController: UIViewController, HomeViewModelDelegate {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = AppColors.blackColor
+        collectionView.accessibilityIdentifier = "OmdbApp.HomeView.collectionView"
         
         return collectionView
     }()

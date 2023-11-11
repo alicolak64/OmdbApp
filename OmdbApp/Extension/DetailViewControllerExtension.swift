@@ -16,6 +16,7 @@ extension DetailViewController {
         
         let arrowImage = AppIcons.arrowBackIcon?.withTintColor(AppColors.whiteColor!)
         backButton.setImage(arrowImage, for: .normal)
+        backButton.accessibilityIdentifier = "backButton"
         
         backButton.addTarget(self, action: #selector(backPreviousScreenButtonTapped), for: .touchUpInside)
         
