@@ -12,6 +12,8 @@
 		E6BD3E562AFB9C8200FAEB77 /* GenreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BD3E552AFB9C8200FAEB77 /* GenreCell.swift */; };
 		E6BD3E582AFBBF5D00FAEB77 /* RatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BD3E572AFBBF5D00FAEB77 /* RatingCell.swift */; };
 		E6BD5F3D2AFFC4FE008801FE /* DetailViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BD5F3C2AFFC4FE008801FE /* DetailViewControllerUITests.swift */; };
+		E6E671202B00D76A00605487 /* HomeViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E6711F2B00D76A00605487 /* HomeViewControllerMock.swift */; };
+		E6E671222B01874B00605487 /* DetailViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E671212B01874B00605487 /* DetailViewControllerMock.swift */; };
 		E6FC31752AFA8DD40077325A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31742AFA8DD40077325A /* AppDelegate.swift */; };
 		E6FC31772AFA8DD40077325A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31762AFA8DD40077325A /* SceneDelegate.swift */; };
 		E6FC31792AFA8DD40077325A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31782AFA8DD40077325A /* HomeViewController.swift */; };
@@ -65,6 +67,8 @@
 		E6BD3E552AFB9C8200FAEB77 /* GenreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCell.swift; sourceTree = "<group>"; };
 		E6BD3E572AFBBF5D00FAEB77 /* RatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCell.swift; sourceTree = "<group>"; };
 		E6BD5F3C2AFFC4FE008801FE /* DetailViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerUITests.swift; sourceTree = "<group>"; };
+		E6E6711F2B00D76A00605487 /* HomeViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerMock.swift; sourceTree = "<group>"; };
+		E6E671212B01874B00605487 /* DetailViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerMock.swift; sourceTree = "<group>"; };
 		E6FC31712AFA8DD40077325A /* OmdbApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmdbApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FC31742AFA8DD40077325A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6FC31762AFA8DD40077325A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +128,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E6E6711D2B00D74300605487 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				E6E6711F2B00D76A00605487 /* HomeViewControllerMock.swift */,
+				E6E671212B01874B00605487 /* DetailViewControllerMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		E6E6711E2B00D74A00605487 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E6FC31952AFA8DD70077325A /* HomeViewControllerUITests.swift */,
+				E6BD5F3C2AFFC4FE008801FE /* DetailViewControllerUITests.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		E6FC31682AFA8DD40077325A = {
 			isa = PBXGroup;
 			children = (
@@ -171,9 +193,9 @@
 		E6FC31942AFA8DD70077325A /* OmdbAppUITests */ = {
 			isa = PBXGroup;
 			children = (
-				E6FC31952AFA8DD70077325A /* HomeViewControllerUITests.swift */,
+				E6E6711E2B00D74A00605487 /* Controller */,
+				E6E6711D2B00D74300605487 /* Mock */,
 				E6FC31972AFA8DD70077325A /* OmdbAppUITestsLaunchTests.swift */,
-				E6BD5F3C2AFFC4FE008801FE /* DetailViewControllerUITests.swift */,
 			);
 			path = OmdbAppUITests;
 			sourceTree = "<group>";
@@ -456,6 +478,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6FC31982AFA8DD70077325A /* OmdbAppUITestsLaunchTests.swift in Sources */,
+				E6E671202B00D76A00605487 /* HomeViewControllerMock.swift in Sources */,
+				E6E671222B01874B00605487 /* DetailViewControllerMock.swift in Sources */,
 				E6FC31962AFA8DD70077325A /* HomeViewControllerUITests.swift in Sources */,
 				E6BD5F3D2AFFC4FE008801FE /* DetailViewControllerUITests.swift in Sources */,
 			);

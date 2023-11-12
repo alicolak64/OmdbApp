@@ -10,13 +10,13 @@ import UIKit
 struct AppConstantFunctions {
     static func getTypeColor(forType type: String) -> UIColor {
         switch type {
-        case AppConstants.movieTypeText:
+        case AppTexts.movieTypeText:
             return AppColors.filmTypeColor!
-        case AppConstants.seriesTypeText:
+        case AppTexts.seriesTypeText:
             return AppColors.seriesTypeColor!
-        case AppConstants.episodeTypeText:
+        case AppTexts.episodeTypeText:
             return AppColors.episodeTypeColor!
-        case AppConstants.gameTypeText:
+        case AppTexts.gameTypeText:
             return AppColors.gameTypeColor!
         default:
             return AppColors.blackColor!
