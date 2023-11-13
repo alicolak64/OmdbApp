@@ -7,24 +7,24 @@ Also developed for Coderspace-Pazarama iOS Bootcamp Final Project.
 
 ## Features
 
-- [x] Programmatic UI
-- [x] MVVM Architecture
-- [x] Protocol Oriented Programming
-- [x] Delegate Pattern
-- [x] Dependency Injection
-- [x] Pagination with Infinite Scroll
-- [x] URLSession
-- [x] Dto
-- [x] Unit Test
-- [x] UI Test
-- [x] Custom Views
-- [x] Collection View
-- [x] Custom Collection View Cells
-- [x] Custom Extensions
+- Programmatic UI
+- MVVM Architecture
+- Protocol Oriented Programming
+- Delegate Pattern
+- Dependency Injection
+- Pagination with Infinite Scroll
+- URLSession
+- Dto
+- Unit Test
+- UI Test
+- Custom Views
+- Collection View
+- Custom Collection View Cells
+- Custom Extensions
 
 ## Frameworks
 
-- [x] Kingfisher
+- Kingfisher
 
 ## Data Source
 
