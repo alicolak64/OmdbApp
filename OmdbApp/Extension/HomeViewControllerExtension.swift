@@ -60,18 +60,9 @@ extension HomeViewController {
 extension HomeViewController : UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
         if let searchedText = searchBar.text {
-            if searchedText.count < 3 {
-                DispatchQueue.main.async {
-                    self.errorLabel.text = AppTexts.characterErrorText
-                    self.collectionView.isHidden = true
-                    self.errorLabel.isHidden = false
-                }
-            } else {
-                let searchedLowerText = searchedText.lowercased()
-                viewModel.searchItems(text: searchedLowerText)
-            }
+            let searchedLowerText = searchedText.lowercased()
+            viewModel.searchItems(text: searchedLowerText)
         }
     }
     func closeSearchResignFirstResponder() {

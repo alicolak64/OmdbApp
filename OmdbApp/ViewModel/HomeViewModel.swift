@@ -50,7 +50,11 @@ class HomeViewModel {
         self.delegate?.updateSearchItems(searchItems: uniqueItems)
         
         if uniqueItems.isEmpty {
-            self.delegate?.movieNotFound()
+            if searchText?.count ?? 0 <= 2 {
+                self.delegate?.updateErrorText(text: AppTexts.characterErrorText)
+            } else {
+                self.delegate?.updateErrorText(text: AppTexts.movieNotFoundErrorText)
+            }
         }
         
     }
@@ -62,6 +66,7 @@ class HomeViewModel {
         if text.count > 2 { // if search text is not greater than 3 api throw an error and send a "Too many results." message
             
             pageNumber = 1
+            searchItems = []
             fetchItems()
             
         } else {
@@ -75,7 +80,7 @@ class HomeViewModel {
         if let searchText {
             if searchText.count > 2 {
                 
-                if AppConstants.pageSize * pageNumber < totalResults {
+                if (AppConstants.pageSize - 1) * pageNumber < totalResults {
                     fetchItems()
                 }
                 
@@ -118,11 +123,14 @@ class HomeViewModel {
             case .failure(let error):
                 switch error {
                 case .urlError:
-                    print("There is an error in the url")
+                    self.searchItems = []
+                    self.representItems()
                 case .decodingError:
-                    print("There is an Error in Model or JSON data")
+                    self.searchItems = []
+                    self.representItems()
                 case .serverError:
-                    print("There is a problem with the server")
+                    self.searchItems = []
+                    self.representItems()
                 }
             }
             

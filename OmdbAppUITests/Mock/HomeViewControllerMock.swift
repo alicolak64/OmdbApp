@@ -12,7 +12,7 @@ struct HomeViewControllerMock {
     static let scrollTestForBatman = SearchItemMock.init(title: "Batman & Robin", year: "1997", type: "Movie")
     static let paginationTestForBatman = SearchItemMock.init(title: "Batman: The Movie", year: "1966", type: "Movie")
     static let firstCellForFightClub = SearchItemMock.init(title: "Fight Club", year: "1999", type: "Movie")
-    static let lastCellPaginationFightClub = SearchItemMock.init(title: "Dance Fight Club", year: "2016", type: "Movie") 
+    static let lastCellPaginationFightClub = SearchItemMock.init(title: "Eye of the Empress: The ...", year: "2015", type: "Movie") 
     static let appName = "Omdb App"
     static let characterErrorText = "Must Be At Least 3 Characters"
     static let movieNotFoundErrorText = "Movie Not Found"

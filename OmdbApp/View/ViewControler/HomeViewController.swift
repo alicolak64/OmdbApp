@@ -13,9 +13,9 @@ class HomeViewController: UIViewController, HomeViewModelDelegate {
     let viewModel : HomeViewModel
     
     var items : [SearchItemDto] = []
+    var errorText : String = ""
     
     var lastRequestTime: Date?
-    
     
     lazy var searchBar : UISearchBar = {
         
@@ -107,13 +107,13 @@ class HomeViewController: UIViewController, HomeViewModelDelegate {
         }
     }
     
-    func movieNotFound() {
+    func updateErrorText(text: String) {
         DispatchQueue.main.async {
-            self.errorLabel.text = AppTexts.movieNotFoundErrorText
+            self.errorText = text
+            self.errorLabel.text = text
             self.collectionView.isHidden = true
             self.errorLabel.isHidden = false
         }
-        
     }
     
     

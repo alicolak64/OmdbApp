@@ -9,8 +9,6 @@ import Foundation
 
 final class OmdbManager :  OmdbService {
     
-    
-    
     private struct Constants {
         static let baseURL = AppConstants.baseUrl
         static let searchQuery = AppConstants.searchQuery
@@ -71,9 +69,5 @@ final class OmdbManager :  OmdbService {
         }
         
     }
-    
-    
-    
-    
     
 }
