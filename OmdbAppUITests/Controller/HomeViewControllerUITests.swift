@@ -156,7 +156,7 @@ final class HomeViewControllerUITests: XCTestCase {
         collectionView.cells.otherElements.containing(.staticText, identifier: HomeViewControllerMock.firstCellForFightClub.title).element.swipeUp()
         
         
-        collectionView.swipeUp(count: 21) // Go to last element with scroll
+        collectionView.swipeUp(count: 22) // Go to last element with scroll
         
         let cellTitle = collectionView.cells.otherElements.containing(.staticText, identifier: HomeViewControllerMock.lastCellPaginationFightClub.title).element // Last Page Last Element
         

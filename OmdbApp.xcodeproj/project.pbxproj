@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		E657AE7C2AFAF43E004FFB4E /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E657AE7B2AFAF43E004FFB4E /* SearchCell.swift */; };
+		E67CFD682B0240C7005B891E /* MockOmdbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67CFD672B0240C7005B891E /* MockOmdbManager.swift */; };
+		E67CFD6D2B02432F005B891E /* SearchMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67CFD6C2B02432F005B891E /* SearchMockData.swift */; };
+		E67CFD712B025554005B891E /* MockHomeViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67CFD702B025554005B891E /* MockHomeViewOutput.swift */; };
+		E67CFD732B02787C005B891E /* SearchTextMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67CFD722B02787C005B891E /* SearchTextMockData.swift */; };
+		E67CFD752B0288EF005B891E /* OmdbAppDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67CFD742B0288EF005B891E /* OmdbAppDetailTests.swift */; };
+		E67CFD772B029482005B891E /* MockDetailViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67CFD762B029482005B891E /* MockDetailViewOutput.swift */; };
+		E67CFD792B02975E005B891E /* DetailMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67CFD782B02975E005B891E /* DetailMockData.swift */; };
 		E6BD3E542AFB81C200FAEB77 /* DetailViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BD3E532AFB81C200FAEB77 /* DetailViewControllerExtension.swift */; };
 		E6BD3E562AFB9C8200FAEB77 /* GenreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BD3E552AFB9C8200FAEB77 /* GenreCell.swift */; };
 		E6BD3E582AFBBF5D00FAEB77 /* RatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BD3E572AFBBF5D00FAEB77 /* RatingCell.swift */; };
@@ -19,7 +26,7 @@
 		E6FC31792AFA8DD40077325A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31782AFA8DD40077325A /* HomeViewController.swift */; };
 		E6FC317E2AFA8DD60077325A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6FC317D2AFA8DD60077325A /* Assets.xcassets */; };
 		E6FC31812AFA8DD60077325A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FC317F2AFA8DD60077325A /* LaunchScreen.storyboard */; };
-		E6FC318C2AFA8DD70077325A /* OmdbAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC318B2AFA8DD70077325A /* OmdbAppTests.swift */; };
+		E6FC318C2AFA8DD70077325A /* OmdbAppHomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC318B2AFA8DD70077325A /* OmdbAppHomeTests.swift */; };
 		E6FC31962AFA8DD70077325A /* HomeViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31952AFA8DD70077325A /* HomeViewControllerUITests.swift */; };
 		E6FC31982AFA8DD70077325A /* OmdbAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31972AFA8DD70077325A /* OmdbAppUITestsLaunchTests.swift */; };
 		E6FC31A82AFA917D0077325A /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31A72AFA917D0077325A /* AppConstants.swift */; };
@@ -63,6 +70,13 @@
 
 /* Begin PBXFileReference section */
 		E657AE7B2AFAF43E004FFB4E /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		E67CFD672B0240C7005B891E /* MockOmdbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockOmdbManager.swift; sourceTree = "<group>"; };
+		E67CFD6C2B02432F005B891E /* SearchMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMockData.swift; sourceTree = "<group>"; };
+		E67CFD702B025554005B891E /* MockHomeViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeViewOutput.swift; sourceTree = "<group>"; };
+		E67CFD722B02787C005B891E /* SearchTextMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextMockData.swift; sourceTree = "<group>"; };
+		E67CFD742B0288EF005B891E /* OmdbAppDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmdbAppDetailTests.swift; sourceTree = "<group>"; };
+		E67CFD762B029482005B891E /* MockDetailViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailViewOutput.swift; sourceTree = "<group>"; };
+		E67CFD782B02975E005B891E /* DetailMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMockData.swift; sourceTree = "<group>"; };
 		E6BD3E532AFB81C200FAEB77 /* DetailViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerExtension.swift; sourceTree = "<group>"; };
 		E6BD3E552AFB9C8200FAEB77 /* GenreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCell.swift; sourceTree = "<group>"; };
 		E6BD3E572AFBBF5D00FAEB77 /* RatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCell.swift; sourceTree = "<group>"; };
@@ -77,7 +91,7 @@
 		E6FC31802AFA8DD60077325A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6FC31822AFA8DD60077325A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6FC31872AFA8DD70077325A /* OmdbAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OmdbAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6FC318B2AFA8DD70077325A /* OmdbAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmdbAppTests.swift; sourceTree = "<group>"; };
+		E6FC318B2AFA8DD70077325A /* OmdbAppHomeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmdbAppHomeTests.swift; sourceTree = "<group>"; };
 		E6FC31912AFA8DD70077325A /* OmdbAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OmdbAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FC31952AFA8DD70077325A /* HomeViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerUITests.swift; sourceTree = "<group>"; };
 		E6FC31972AFA8DD70077325A /* OmdbAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmdbAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -128,6 +142,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E67CFD622B023FDB005B891E /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				E67CFD6F2B024461005B891E /* Class */,
+				E67CFD6E2B02445C005B891E /* Data */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		E67CFD6E2B02445C005B891E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E67CFD6C2B02432F005B891E /* SearchMockData.swift */,
+				E67CFD722B02787C005B891E /* SearchTextMockData.swift */,
+				E67CFD782B02975E005B891E /* DetailMockData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E67CFD6F2B024461005B891E /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				E67CFD672B0240C7005B891E /* MockOmdbManager.swift */,
+				E67CFD702B025554005B891E /* MockHomeViewOutput.swift */,
+				E67CFD762B029482005B891E /* MockDetailViewOutput.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
 		E6E6711D2B00D74300605487 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,7 +228,9 @@
 		E6FC318A2AFA8DD70077325A /* OmdbAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				E6FC318B2AFA8DD70077325A /* OmdbAppTests.swift */,
+				E67CFD622B023FDB005B891E /* Mock */,
+				E6FC318B2AFA8DD70077325A /* OmdbAppHomeTests.swift */,
+				E67CFD742B0288EF005B891E /* OmdbAppDetailTests.swift */,
 			);
 			path = OmdbAppTests;
 			sourceTree = "<group>";
@@ -469,7 +514,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6FC318C2AFA8DD70077325A /* OmdbAppTests.swift in Sources */,
+				E67CFD6D2B02432F005B891E /* SearchMockData.swift in Sources */,
+				E6FC318C2AFA8DD70077325A /* OmdbAppHomeTests.swift in Sources */,
+				E67CFD772B029482005B891E /* MockDetailViewOutput.swift in Sources */,
+				E67CFD752B0288EF005B891E /* OmdbAppDetailTests.swift in Sources */,
+				E67CFD732B02787C005B891E /* SearchTextMockData.swift in Sources */,
+				E67CFD712B025554005B891E /* MockHomeViewOutput.swift in Sources */,
+				E67CFD792B02975E005B891E /* DetailMockData.swift in Sources */,
+				E67CFD682B0240C7005B891E /* MockOmdbManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
