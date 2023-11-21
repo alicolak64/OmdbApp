@@ -7,7 +7,9 @@
 
 import Foundation
 
-final class OmdbManager :  OmdbService {
+final class OmdbManager: OmdbService {
+    
+    static let shared = OmdbManager()
     
     private struct Constants {
         static let baseURL = AppConstants.baseUrl
@@ -27,7 +29,6 @@ final class OmdbManager :  OmdbService {
                     
                     let response = try? JSONDecoder().decode(SearchResponse.self, from: data)
                     
-                    
                     if let response = response {
                         completion(.success(response))
                     } else {
@@ -37,6 +38,7 @@ final class OmdbManager :  OmdbService {
             }.resume()
             
         } else {
+            
             completion(.failure(.urlError))
             return
         }
@@ -51,7 +53,6 @@ final class OmdbManager :  OmdbService {
                 if error != nil {
                     completion(.failure(.serverError))
                 } else if let data = data {
-                    
                     
                     let response = try? JSONDecoder().decode(DetailItemResponse.self, from: data)
                     

@@ -7,11 +7,11 @@
 
 import UIKit
 
-class GenreCell: UICollectionViewCell {
+final class GenreCell: UICollectionViewCell {
     
     static let identifier = "GenreCell"
     
-    lazy var genreView: UIView = {
+    private let genreView: UIView = {
         let view = UIView()
         view.backgroundColor = AppColors.genreViewColor
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -20,7 +20,7 @@ class GenreCell: UICollectionViewCell {
         return view
     }()
     
-    lazy var genreNameLabel : UILabel = {
+    private let genreNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
@@ -42,16 +42,15 @@ class GenreCell: UICollectionViewCell {
     }
     
     func configure(with genre: String) {
-        
         self.genreNameLabel.text = genre
     }
     
-    func addCellComponents() {
+    private func addCellComponents() {
         contentView.addSubview(genreView)
         genreView.addSubview(genreNameLabel)
     }
     
-    func setCellLayouts() {
+    private func setCellLayouts() {
         
         NSLayoutConstraint.activate([
             genreView.topAnchor.constraint(equalTo: topAnchor),

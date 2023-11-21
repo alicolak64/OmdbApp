@@ -22,7 +22,7 @@ struct AppConstantFunctions {
             return AppColors.blackColor!
         }
     }
-    static func isSuccessResponse(response : SearchResponse) -> Bool {
+    static func isSuccessResponse(response: SearchResponse) -> Bool {
         if response.response == "True" {
             return true
         } else {

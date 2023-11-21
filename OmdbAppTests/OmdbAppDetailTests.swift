@@ -10,24 +10,23 @@ import XCTest
 
 final class OmdbAppDetailTests: XCTestCase {
     
-    private var mockOmdbService : MockOmdbManager!
-    private var mockDetailViewModel : DetailViewModel!
-    private var mockDetailViewModelOutput : MockDetailViewOutput!
+    private var mockOmdbService: MockOmdbManager!
+    private var mockDetailViewModel: DetailViewModel!
+    private var mockDetailViewModelOutput: MockDetailViewOutput!
     
     private var item: DetailItemDto!
     
     override func setUpWithError() throws {
         mockOmdbService = MockOmdbManager()
         
-        mockDetailViewModel = DetailViewModel(omdbService: mockOmdbService)
-        
         mockDetailViewModelOutput = MockDetailViewOutput()
-        mockDetailViewModel.delegate = mockDetailViewModelOutput
         
-        mockDetailViewModel.getItem(imdbId: DetailMockData.initalImdbId)
+        mockDetailViewModel = DetailViewModel(delegate: mockDetailViewModelOutput, omdbService: mockOmdbService)
         
-        item = DetailItemDto.init(item: DetailMockData.initalItemDetail)
-                
+        mockDetailViewModel.setData(imdbId: DetailMockData.initalImdbId, items: SearchMockData.batmanSearchResponsePage1.search!.map(SearchItemDto.init))
+        
+        item = DetailItemDto.init(item: DetailMockData.thirdItemDetail)
+        
     }
     
     override func tearDownWithError() throws {
@@ -56,24 +55,6 @@ final class OmdbAppDetailTests: XCTestCase {
         XCTAssertEqual(mockDetailViewModelOutput.item?.boxOffice, item.boxOffice)
     }
     
-    func testItemGenreForBatman_whenAPISuccess_itemCountAndCells() {
-        let itemGenreArray = item.genre.components(separatedBy: ", ")
-        XCTAssertEqual(mockDetailViewModelOutput.genres.count, itemGenreArray.count)
-        XCTAssertEqual(mockDetailViewModelOutput.genres[0], itemGenreArray[0])
-        XCTAssertEqual(mockDetailViewModelOutput.genres[1], itemGenreArray[1])
-        XCTAssertEqual(mockDetailViewModelOutput.genres[2], itemGenreArray[2])
-    }
-    
-    func testItemRatingsForBatman_whenAPISuccess_itemCountAndCells() {
-        XCTAssertEqual(mockDetailViewModelOutput.ratings.count, item.ratings?.count)
-        XCTAssertEqual(mockDetailViewModelOutput.ratings[0].source , item.ratings![0].source)
-        XCTAssertEqual(mockDetailViewModelOutput.ratings[0].value , item.ratings![0].value)
-        XCTAssertEqual(mockDetailViewModelOutput.ratings[1].source , item.ratings![1].source)
-        XCTAssertEqual(mockDetailViewModelOutput.ratings[1].value , item.ratings![1].value)
-        XCTAssertEqual(mockDetailViewModelOutput.ratings[2].source , item.ratings![2].source)
-        XCTAssertEqual(mockDetailViewModelOutput.ratings[2].value , item.ratings![2].value)
-    }
-    
     func testItemDetailsForBatman2_whenAPISuccess_showDetail() throws {
         mockDetailViewModel.getItem(imdbId: DetailMockData.seconImdbId)
         item = DetailItemDto.init(item: DetailMockData.secondItemDetail)
@@ -96,26 +77,56 @@ final class OmdbAppDetailTests: XCTestCase {
         XCTAssertEqual(mockDetailViewModelOutput.item?.boxOffice, item.boxOffice)
     }
     
-    func testItemGenreForBatman2_whenAPISuccess_itemCountAndCells() {
-        mockDetailViewModel.getItem(imdbId: DetailMockData.seconImdbId)
-        item = DetailItemDto.init(item: DetailMockData.secondItemDetail)
-        let itemGenreArray = item.genre.components(separatedBy: ", ")
-        XCTAssertEqual(mockDetailViewModelOutput.genres.count, itemGenreArray.count)
-        XCTAssertEqual(mockDetailViewModelOutput.genres[0], itemGenreArray[0])
-        XCTAssertEqual(mockDetailViewModelOutput.genres[1], itemGenreArray[1])
-        XCTAssertEqual(mockDetailViewModelOutput.genres[2], itemGenreArray[2])
+    func testShowNextButton_whenAPISuccess_showButton() throws {
+        XCTAssertTrue(mockDetailViewModelOutput.isInvokeShowNextItemButton)
+        XCTAssertEqual(mockDetailViewModelOutput.invokeShowNextItemButtonCount, 1)
     }
     
-    func testItemRatingsForBatman2_whenAPISuccess_itemCountAndCells() {
-        mockDetailViewModel.getItem(imdbId: DetailMockData.seconImdbId)
-        item = DetailItemDto.init(item: DetailMockData.secondItemDetail)
-        XCTAssertEqual(mockDetailViewModelOutput.ratings.count, item.ratings?.count)
-        XCTAssertEqual(mockDetailViewModelOutput.ratings[0].source , item.ratings![0].source)
-        XCTAssertEqual(mockDetailViewModelOutput.ratings[0].value , item.ratings![0].value)
-        XCTAssertEqual(mockDetailViewModelOutput.ratings[1].source , item.ratings![1].source)
-        XCTAssertEqual(mockDetailViewModelOutput.ratings[1].value , item.ratings![1].value)
-        XCTAssertEqual(mockDetailViewModelOutput.ratings[2].source , item.ratings![2].source)
-        XCTAssertEqual(mockDetailViewModelOutput.ratings[2].value , item.ratings![2].value)
+    func testShowBackButton_whenAPISuccess_showButton() throws {
+        XCTAssertTrue(mockDetailViewModelOutput.isInvokeShowBackItemButton)
+        XCTAssertEqual(mockDetailViewModelOutput.invokeShowBackItemButtonCount, 1)
     }
+    
+    func testHideNextButton_whenAPISuccess_hideButton() throws {
+        XCTAssertFalse(mockDetailViewModelOutput.isInvokeHideNextItemButton)
+        XCTAssertEqual(mockDetailViewModelOutput.invokeHideNextItemButtonCount, 0)
+    }
+    
+    func testHideBackButton_whenAPISuccess_hideButton() throws {
+        XCTAssertFalse(mockDetailViewModelOutput.isInvokeHideBackItemButton)
+        XCTAssertEqual(mockDetailViewModelOutput.invokeHideBackItemButtonCount, 0)
+    }
+    
+    func testNextItem_whenAPISuccess_showItemAndButons() throws {
+        mockDetailViewModel.getNextItem()
+        let nextItem = SearchMockData.batmanSearchResponsePage1.search!.map(SearchItemDto.init)[3]
+        XCTAssertEqual(mockDetailViewModelOutput.item?.title, nextItem.title)
+        XCTAssertEqual(mockDetailViewModelOutput.invokeShowNextItemButtonCount, 2)
+        XCTAssertEqual(mockDetailViewModelOutput.invokeShowBackItemButtonCount, 2)
+        XCTAssertEqual(mockDetailViewModelOutput.invokeHideBackItemButtonCount, 0)
+        XCTAssertEqual(mockDetailViewModelOutput.invokeHideNextItemButtonCount, 0)
+    }
+    
+    func testBackItem_whenAPISuccess_showItemAndButons() throws {
+        mockDetailViewModel.getBackItem()
+        let backItem = SearchMockData.batmanSearchResponsePage1.search!.map(SearchItemDto.init)[1]
+        XCTAssertEqual(mockDetailViewModelOutput.item?.title, backItem.title)
+        XCTAssertEqual(mockDetailViewModelOutput.invokeShowNextItemButtonCount, 2)
+        XCTAssertEqual(mockDetailViewModelOutput.invokeShowBackItemButtonCount, 2)
+        XCTAssertEqual(mockDetailViewModelOutput.invokeHideBackItemButtonCount, 0)
+        XCTAssertEqual(mockDetailViewModelOutput.invokeHideNextItemButtonCount, 0)
+    }
+    
+    func testTwoTimesBackItem_whenAPISuccess_showItemAndButons() throws {
+        mockDetailViewModel.getBackItem()
+        mockDetailViewModel.getBackItem()
+        let backItem = SearchMockData.batmanSearchResponsePage1.search!.map(SearchItemDto.init)[0]
+        XCTAssertEqual(mockDetailViewModelOutput.item?.title, backItem.title)
+        XCTAssertEqual(mockDetailViewModelOutput.invokeShowNextItemButtonCount, 3)
+        XCTAssertEqual(mockDetailViewModelOutput.invokeShowBackItemButtonCount, 2)
+        XCTAssertEqual(mockDetailViewModelOutput.invokeHideBackItemButtonCount, 1)
+        XCTAssertEqual(mockDetailViewModelOutput.invokeHideNextItemButtonCount, 0)
+    }
+    
     
 }

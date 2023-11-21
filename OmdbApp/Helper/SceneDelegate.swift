@@ -23,9 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         
         
-        let service : OmdbService = OmdbManager()
-        let homeScreenViewModel = HomeViewModel(omdbService: service)
-        let homeVC = HomeViewController(viewModel: homeScreenViewModel)
+        let homeVC = HomeViewController()
         let navigationController = UINavigationController(rootViewController: homeVC)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

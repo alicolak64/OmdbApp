@@ -9,9 +9,9 @@ import XCTest
 
 final class HomeViewControllerUITests: XCTestCase {
     
-    var app: XCUIApplication!
-    var collectionView : XCUIElement!
-    var searchBar : XCUIElement!
+    private var app: XCUIApplication!
+    private var collectionView: XCUIElement!
+    private var searchBar: XCUIElement!
     
     override func setUpWithError() throws {
         continueAfterFailure = false
@@ -25,12 +25,19 @@ final class HomeViewControllerUITests: XCTestCase {
     override func tearDownWithError() throws {
     }
     
-    func testExistsCollectionView() throws {
+    func testExistsInitalMessage() throws {
+        let plaaseSearchMovieText = XCUIApplication().staticTexts[HomeViewControllerMock.pleaseMovieSearchText].waitForExistence(timeout: 10)
         
+        XCTAssertTrue(plaaseSearchMovieText, HomeViewControllerMock.pleaseMovieSearchText)
+    }
+    
+    func testExistsCollectionView() throws {
+        searchBar.clearAndEnterText(text: HomeViewControllerMock.testSearchTextBatman)
         XCTAssertTrue(collectionView.exists, "Collection View not found.")
     }
     
     func testExistsCell() throws {
+        searchBar.clearAndEnterText(text: HomeViewControllerMock.testSearchTextBatman)
         
         let cellTitle = collectionView.cells.element(boundBy: 0).staticTexts[HomeViewControllerMock.firstCellForBatman.title]
         
@@ -61,23 +68,23 @@ final class HomeViewControllerUITests: XCTestCase {
     }
     
     func testVisibleCollectionViewCellCount() throws {
-        
+        searchBar.clearAndEnterText(text: HomeViewControllerMock.testSearchTextBatman)
         XCTAssertEqual(collectionView.cells.count, 3, "Collection View Not Contains 3 row")
         
     }
     
     func testSearchBarInput() throws {
         
-        searchBar.clearAndEnterText(text: HomeViewControllerMock.testSearchText)
+        searchBar.clearAndEnterText(text: HomeViewControllerMock.testSearchTextFightClub)
         
-        XCTAssertEqual(searchBar.value as? String, HomeViewControllerMock.testSearchText, "Failed to enter text in the search bar.")
+        XCTAssertEqual(searchBar.value as? String, HomeViewControllerMock.testSearchTextFightClub, "Failed to enter text in the search bar.")
         
     }
     
     func testSearchBarInputResult() throws {
         
-        searchBar.clearAndEnterText(text: HomeViewControllerMock.testSearchText)
-                
+        searchBar.clearAndEnterText(text: HomeViewControllerMock.testSearchTextFightClub)
+        
         let cellTitle = collectionView.cells.element(boundBy: 0).staticTexts[HomeViewControllerMock.firstCellForFightClub.title].waitForExistence(timeout: 10)
         
         let cellYear = collectionView.cells.element(boundBy: 0).staticTexts[HomeViewControllerMock.firstCellForFightClub.year].waitForExistence(timeout: 10)
@@ -116,8 +123,9 @@ final class HomeViewControllerUITests: XCTestCase {
     }
     
     func testSroll() throws {
+        searchBar.clearAndEnterText(text: HomeViewControllerMock.testSearchTextBatman)
         
-        collectionView.swipeUp(count: 1)
+        collectionView.cells.otherElements.containing(.staticText, identifier: HomeViewControllerMock.firstCellForBatman.title).element.swipeUp()
         
         let cell = collectionView.cells.otherElements.containing(.staticText, identifier: HomeViewControllerMock.scrollTestForBatman.title).element // Element is scroll element
         
@@ -130,8 +138,11 @@ final class HomeViewControllerUITests: XCTestCase {
     }
     
     func testPaginationWithScrollInfinite() throws {
+        searchBar.clearAndEnterText(text: HomeViewControllerMock.testSearchTextBatman)
         
-        collectionView.swipeUp(count: 5)
+        collectionView.cells.otherElements.containing(.staticText, identifier: HomeViewControllerMock.firstCellForBatman.title).element.swipeUp()
+        
+        collectionView.swipeUp(count: 3)
         
         let cellTitle = collectionView.cells.otherElements.containing(.staticText, identifier: HomeViewControllerMock.paginationTestForBatman.title).element // Element is have in second page
         
@@ -148,10 +159,9 @@ final class HomeViewControllerUITests: XCTestCase {
     
     func testScrollLastPage() throws {
         
-        let searchText = HomeViewControllerMock.testSearchText
+        let searchText = HomeViewControllerMock.testSearchTextFightClub
         
         searchBar.clearAndEnterText(text: searchText)
-        
         
         collectionView.cells.otherElements.containing(.staticText, identifier: HomeViewControllerMock.firstCellForFightClub.title).element.swipeUp()
         
@@ -172,6 +182,8 @@ final class HomeViewControllerUITests: XCTestCase {
     }
     
     func testPassDetailVC() throws {
+        
+        searchBar.clearAndEnterText(text: HomeViewControllerMock.testSearchTextBatman)
         
         let cell = collectionView.cells.element(boundBy: 0).staticTexts[HomeViewControllerMock.firstCellForBatman.title]
         

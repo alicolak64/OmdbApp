@@ -1,12 +1,11 @@
 //
-//  GeneralExtensions.swift
+//  UIColor+Extensions.swift
 //  OmdbApp
 //
-//  Created by Ali Çolak on 7.11.2023.
+//  Created by Ali Çolak on 15.11.2023.
 //
 
 import UIKit
-
 
 extension UIColor {
     public convenience init?(hex: String, alpha: Double = 1.0) {
@@ -30,25 +29,5 @@ extension UIColor {
             return
         }
         return nil
-    }
-}
-
-extension UIImage {
-    func resized(toSize newSize: CGSize) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
-        draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return newImage ?? self
-    }
-}
-
-
-
-extension UIView {
-    func addSubviews(_ views : [UIView]){
-        views.forEach { view in
-            addSubview(view)
-        }
     }
 }

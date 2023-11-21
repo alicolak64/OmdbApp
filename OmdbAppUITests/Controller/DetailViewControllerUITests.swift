@@ -9,19 +9,23 @@ import XCTest
 
 final class DetailViewControllerUITests: XCTestCase {
     
-    var app: XCUIApplication!
-    var collectionView: XCUIElement!
-    var image : XCUIElement!
-    var title : XCUIElement!
-    var backItemButton : XCUIElement!
-    var nextItemButton : XCUIElement!
-    var genreCollectionView: XCUIElement!
-    var ratingCollectionView: XCUIElement!
+    private var app: XCUIApplication!
+    private var searchBar: XCUIElement!
+    private var collectionView: XCUIElement!
+    private var image: XCUIElement!
+    private var title: XCUIElement!
+    private var backItemButton: XCUIElement!
+    private var nextItemButton: XCUIElement!
+    private var genreCollectionView: XCUIElement!
+    private var ratingCollectionView: XCUIElement!
     
     override func setUpWithError() throws {
         continueAfterFailure = false
         app = XCUIApplication()
         app.launch()
+        
+        searchBar = app.searchFields["Search"]
+        searchBar.clearAndEnterText(text: HomeViewControllerMock.testSearchTextBatman)
         
         collectionView = app.collectionViews["OmdbApp.HomeView.collectionView"]
         
@@ -307,7 +311,7 @@ final class DetailViewControllerUITests: XCTestCase {
         XCTAssertTrue(title.waitForExistence(timeout: 10), "Title Text not found.")
         
         XCTAssertEqual(title.label, DetailViewControllerMock.previousCellTile, "Title Text is not equal to " + DetailViewControllerMock.previousCellTile)
-
+        
         XCTAssertTrue(backItemButton.isEnabled)
         XCTAssertTrue(nextItemButton.isEnabled)
         

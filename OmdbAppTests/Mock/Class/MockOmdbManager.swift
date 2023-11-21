@@ -9,13 +9,12 @@ import XCTest
 @testable import OmdbApp
 
 
-class MockOmdbManager: OmdbService {
+final class MockOmdbManager: OmdbService {
     
     func fetchSearchResponse(searchText: String, pageNumber: Int, completion: @escaping (Result<OmdbApp.SearchResponse, OmdbApp.ServiceError>) -> ()) {
         
-        
         switch searchText {
-        case "batman" :
+        case "batman":
             switch pageNumber {
             case 1:
                 completion(.success(SearchMockData.batmanSearchResponsePage1))
@@ -42,9 +41,9 @@ class MockOmdbManager: OmdbService {
                 completion(.success(SearchMockData.fightClubSearchResponsePage7))
             default:
                 completion(.failure(.serverError))
-
+                
             }
-        default :
+        default:
             completion(.failure(.urlError))
         }
         
@@ -54,10 +53,14 @@ class MockOmdbManager: OmdbService {
         
         
         switch imdbId {
-        case "tt1877830":
-            completion(.success(DetailMockData.initalItemDetail))
-        case "tt2975590" :
+        case "tt0372784":
+            completion(.success(DetailMockData.firstItemDetail))
+        case "tt2975590":
             completion(.success(DetailMockData.secondItemDetail))
+        case "tt1877830":
+            completion(.success(DetailMockData.thirdItemDetail))
+        case "tt0096895":
+            completion(.success(DetailMockData.fourthItemDetail))
         default:
             completion(.failure(.urlError))
         }

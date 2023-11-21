@@ -7,11 +7,11 @@
 
 import UIKit
 
-class RatingCell: UICollectionViewCell {
+final class RatingCell: UICollectionViewCell {
     
     static let identifier = "RatingCell"
     
-    private let sourceLabel : UILabel = {
+    private let sourceLabel: UILabel = {
         let label = UILabel()
         label.font = AppFonts.mediumFont
         label.textColor = AppColors.placeHolderColor
@@ -21,7 +21,7 @@ class RatingCell: UICollectionViewCell {
         return label
     }()
     
-    private let valueLabel : UILabel = {
+    private let valueLabel: UILabel = {
         let label = UILabel()
         label.font = AppFonts.mediumFont
         label.textColor = AppColors.blackColor
@@ -46,17 +46,15 @@ class RatingCell: UICollectionViewCell {
     }
     
     func configure(with rating: RatingDto) {
-        
         self.sourceLabel.text = rating.source
         self.valueLabel.text = rating.value
     }
     
-    func addCellComponents() {
-        contentView.addSubview(sourceLabel)
-        contentView.addSubview(valueLabel)
+    private func addCellComponents() {
+        contentView.addSubviews([sourceLabel,valueLabel])
     }
     
-    func setCellLayouts() {
+    private func setCellLayouts() {
         
         NSLayoutConstraint.activate([
             

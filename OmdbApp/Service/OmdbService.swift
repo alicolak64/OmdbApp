@@ -7,9 +7,7 @@
 
 import Foundation
 
-import Foundation
-
-enum ServiceError : Error {
+enum ServiceError: Error {
     case serverError
     case decodingError
     case urlError

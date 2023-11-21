@@ -8,12 +8,11 @@
 import UIKit
 import Kingfisher
 
-
-class SearchCell: UICollectionViewCell {
+final class SearchCell: UICollectionViewCell {
     
     static let identifier = "SearchCell"
     
-    private let itemImage : UIImageView = {
+    private let itemImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.layer.masksToBounds = true
@@ -21,7 +20,7 @@ class SearchCell: UICollectionViewCell {
         return image
     }()
     
-    private let itemName : UILabel = {
+    private let itemName: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = AppFonts.titleFont
@@ -38,7 +37,7 @@ class SearchCell: UICollectionViewCell {
         return view
     }()
     
-    private let itemTypeLabel : UILabel = {
+    private let itemTypeLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = AppFonts.mediumFont
@@ -47,7 +46,7 @@ class SearchCell: UICollectionViewCell {
         return label
     }()
     
-    private let itemyYearLabel : UILabel = {
+    private let itemyYearLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = AppFonts.placeholderFont
@@ -92,22 +91,16 @@ class SearchCell: UICollectionViewCell {
         self.itemyYearLabel.text = item.year
     }
     
-    func addCellComponents(){
+    private func addCellComponents(){
         
-        contentView.addSubview(itemImage)
-        
-        contentView.addSubview(itemName)
-        
-        contentView.addSubview(itemTypeContainerView)
+        contentView.addSubviews([itemImage,itemName,itemTypeContainerView,itemyYearLabel])
         
         itemTypeContainerView.addSubview(itemTypeLabel)
-        
-        contentView.addSubview(itemyYearLabel)
         
     }
     
     
-    func setCellLayouts(){
+    private func setCellLayouts(){
         
         NSLayoutConstraint.activate([
             

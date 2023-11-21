@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct DetailItemResponse: Codable {
     let title: String?
     let year: String?
@@ -65,12 +64,11 @@ struct DetailItemResponse: Codable {
 }
 
 struct RatingResponse: Codable {
-    let source: String
-    let value: String
+    let source: String?
+    let value: String?
     
     enum CodingKeys: String, CodingKey {
         case source = "Source"
         case value = "Value"
     }
 }
-

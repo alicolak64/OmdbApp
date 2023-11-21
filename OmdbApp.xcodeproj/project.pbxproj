@@ -15,12 +15,14 @@
 		E67CFD752B0288EF005B891E /* OmdbAppDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67CFD742B0288EF005B891E /* OmdbAppDetailTests.swift */; };
 		E67CFD772B029482005B891E /* MockDetailViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67CFD762B029482005B891E /* MockDetailViewOutput.swift */; };
 		E67CFD792B02975E005B891E /* DetailMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67CFD782B02975E005B891E /* DetailMockData.swift */; };
-		E6BD3E542AFB81C200FAEB77 /* DetailViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BD3E532AFB81C200FAEB77 /* DetailViewControllerExtension.swift */; };
 		E6BD3E562AFB9C8200FAEB77 /* GenreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BD3E552AFB9C8200FAEB77 /* GenreCell.swift */; };
 		E6BD3E582AFBBF5D00FAEB77 /* RatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BD3E572AFBBF5D00FAEB77 /* RatingCell.swift */; };
 		E6BD5F3D2AFFC4FE008801FE /* DetailViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BD5F3C2AFFC4FE008801FE /* DetailViewControllerUITests.swift */; };
 		E6E671202B00D76A00605487 /* HomeViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E6711F2B00D76A00605487 /* HomeViewControllerMock.swift */; };
 		E6E671222B01874B00605487 /* DetailViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E671212B01874B00605487 /* DetailViewControllerMock.swift */; };
+		E6F504E92B0B5D96006BF51D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F504E82B0B5D96006BF51D /* UIView+Extensions.swift */; };
+		E6F504EB2B0B5DAF006BF51D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F504EA2B0B5DAF006BF51D /* UIColor+Extensions.swift */; };
+		E6F504ED2B0B5DD7006BF51D /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F504EC2B0B5DD7006BF51D /* UIImage+Extensions.swift */; };
 		E6FC31752AFA8DD40077325A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31742AFA8DD40077325A /* AppDelegate.swift */; };
 		E6FC31772AFA8DD40077325A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31762AFA8DD40077325A /* SceneDelegate.swift */; };
 		E6FC31792AFA8DD40077325A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31782AFA8DD40077325A /* HomeViewController.swift */; };
@@ -42,10 +44,8 @@
 		E6FC31C12AFAA2F40077325A /* DetailItemDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31C02AFAA2F40077325A /* DetailItemDto.swift */; };
 		E6FC31C32AFAB3EC0077325A /* AppConstantFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31C22AFAB3EC0077325A /* AppConstantFunctions.swift */; };
 		E6FC31C52AFAB4E20077325A /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31C42AFAB4E20077325A /* AppColors.swift */; };
-		E6FC31C82AFAB5860077325A /* GeneralExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31C72AFAB5860077325A /* GeneralExtensions.swift */; };
 		E6FC31CC2AFAD94B0077325A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31CB2AFAD94B0077325A /* DetailViewController.swift */; };
 		E6FC31CF2AFAD97A0077325A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E6FC31CE2AFAD97A0077325A /* Kingfisher */; };
-		E6FC31D22AFAE5810077325A /* HomeViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31D12AFAE5810077325A /* HomeViewControllerExtension.swift */; };
 		E6FC31D42AFAE5E20077325A /* AppTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31D32AFAE5E20077325A /* AppTexts.swift */; };
 		E6FC31D62AFAE6130077325A /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31D52AFAE6130077325A /* AppFonts.swift */; };
 		E6FC31D82AFAEA810077325A /* AppIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC31D72AFAEA810077325A /* AppIcons.swift */; };
@@ -77,12 +77,14 @@
 		E67CFD742B0288EF005B891E /* OmdbAppDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmdbAppDetailTests.swift; sourceTree = "<group>"; };
 		E67CFD762B029482005B891E /* MockDetailViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailViewOutput.swift; sourceTree = "<group>"; };
 		E67CFD782B02975E005B891E /* DetailMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMockData.swift; sourceTree = "<group>"; };
-		E6BD3E532AFB81C200FAEB77 /* DetailViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerExtension.swift; sourceTree = "<group>"; };
 		E6BD3E552AFB9C8200FAEB77 /* GenreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCell.swift; sourceTree = "<group>"; };
 		E6BD3E572AFBBF5D00FAEB77 /* RatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCell.swift; sourceTree = "<group>"; };
 		E6BD5F3C2AFFC4FE008801FE /* DetailViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerUITests.swift; sourceTree = "<group>"; };
 		E6E6711F2B00D76A00605487 /* HomeViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerMock.swift; sourceTree = "<group>"; };
 		E6E671212B01874B00605487 /* DetailViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerMock.swift; sourceTree = "<group>"; };
+		E6F504E82B0B5D96006BF51D /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		E6F504EA2B0B5DAF006BF51D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		E6F504EC2B0B5DD7006BF51D /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		E6FC31712AFA8DD40077325A /* OmdbApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmdbApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FC31742AFA8DD40077325A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6FC31762AFA8DD40077325A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,9 +110,7 @@
 		E6FC31C02AFAA2F40077325A /* DetailItemDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemDto.swift; sourceTree = "<group>"; };
 		E6FC31C22AFAB3EC0077325A /* AppConstantFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstantFunctions.swift; sourceTree = "<group>"; };
 		E6FC31C42AFAB4E20077325A /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
-		E6FC31C72AFAB5860077325A /* GeneralExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralExtensions.swift; sourceTree = "<group>"; };
 		E6FC31CB2AFAD94B0077325A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		E6FC31D12AFAE5810077325A /* HomeViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerExtension.swift; sourceTree = "<group>"; };
 		E6FC31D32AFAE5E20077325A /* AppTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTexts.swift; sourceTree = "<group>"; };
 		E6FC31D52AFAE6130077325A /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		E6FC31D72AFAEA810077325A /* AppIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcons.swift; sourceTree = "<group>"; };
@@ -310,9 +310,9 @@
 		E6FC31C62AFAB5610077325A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				E6FC31C72AFAB5860077325A /* GeneralExtensions.swift */,
-				E6FC31D12AFAE5810077325A /* HomeViewControllerExtension.swift */,
-				E6BD3E532AFB81C200FAEB77 /* DetailViewControllerExtension.swift */,
+				E6F504E82B0B5D96006BF51D /* UIView+Extensions.swift */,
+				E6F504EA2B0B5DAF006BF51D /* UIColor+Extensions.swift */,
+				E6F504EC2B0B5DD7006BF51D /* UIImage+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -484,7 +484,6 @@
 				E6FC31BF2AFAA2E90077325A /* SearchItemDto.swift in Sources */,
 				E6FC31792AFA8DD40077325A /* HomeViewController.swift in Sources */,
 				E6FC31C32AFAB3EC0077325A /* AppConstantFunctions.swift in Sources */,
-				E6FC31C82AFAB5860077325A /* GeneralExtensions.swift in Sources */,
 				E6FC31B62AFAA2190077325A /* HomeViewModel.swift in Sources */,
 				E6FC31BC2AFAA2490077325A /* DetailViewModelDelegate.swift in Sources */,
 				E6FC31B32AFA9D8F0077325A /* OmdbManager.swift in Sources */,
@@ -492,21 +491,22 @@
 				E6FC31C12AFAA2F40077325A /* DetailItemDto.swift in Sources */,
 				E6FC31D62AFAE6130077325A /* AppFonts.swift in Sources */,
 				E6FC31CC2AFAD94B0077325A /* DetailViewController.swift in Sources */,
+				E6F504EB2B0B5DAF006BF51D /* UIColor+Extensions.swift in Sources */,
 				E6FC31D42AFAE5E20077325A /* AppTexts.swift in Sources */,
+				E6F504E92B0B5D96006BF51D /* UIView+Extensions.swift in Sources */,
 				E6BD3E582AFBBF5D00FAEB77 /* RatingCell.swift in Sources */,
 				E6FC31752AFA8DD40077325A /* AppDelegate.swift in Sources */,
 				E6BD3E562AFB9C8200FAEB77 /* GenreCell.swift in Sources */,
-				E6BD3E542AFB81C200FAEB77 /* DetailViewControllerExtension.swift in Sources */,
 				E6FC31772AFA8DD40077325A /* SceneDelegate.swift in Sources */,
 				E6FC31A82AFA917D0077325A /* AppConstants.swift in Sources */,
 				E6FC31AC2AFA9C440077325A /* DetailItemResponse.swift in Sources */,
 				E6FC31B82AFAA22F0077325A /* HomeViewModelDelegate.swift in Sources */,
-				E6FC31D22AFAE5810077325A /* HomeViewControllerExtension.swift in Sources */,
 				E6FC31D82AFAEA810077325A /* AppIcons.swift in Sources */,
 				E6FC31C52AFAB4E20077325A /* AppColors.swift in Sources */,
 				E6FC31BA2AFAA23E0077325A /* DetailViewModel.swift in Sources */,
 				E6FC31B12AFA9D800077325A /* OmdbService.swift in Sources */,
 				E657AE7C2AFAF43E004FFB4E /* SearchCell.swift in Sources */,
+				E6F504ED2B0B5DD7006BF51D /* UIImage+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

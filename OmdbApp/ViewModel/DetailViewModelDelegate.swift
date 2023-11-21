@@ -7,6 +7,10 @@
 
 import Foundation
 
-protocol DetailViewModelDelegate : AnyObject {
+protocol DetailViewModelDelegate: AnyObject {
     func updateItem(item: DetailItemDto)
+    func showBackItemButton()
+    func showNextItemButton()
+    func hideBackItemButton()
+    func hideNextItemButton()
 }

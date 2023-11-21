@@ -22,11 +22,11 @@ struct SearchResponse: Codable {
 }
 
 struct SearchItemResponse: Codable {
-    let title: String
-    let year: String
-    let imdbID: String
-    let type: String
-    let poster: String
+    let title: String?
+    let year: String?
+    let imdbID: String?
+    let type: String?
+    let poster: String?
     
     private enum CodingKeys: String, CodingKey {
         case title = "Title"
@@ -36,4 +36,3 @@ struct SearchItemResponse: Codable {
         case poster = "Poster"
     }
 }
-

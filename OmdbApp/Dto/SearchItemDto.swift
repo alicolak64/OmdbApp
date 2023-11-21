@@ -9,37 +9,37 @@ import UIKit
 
 struct SearchItemDto: Codable {
     
-    let item : SearchItemResponse
+    let item: SearchItemResponse
     
     var title: String {
-        item.title
+        item.title ?? "No Title"
     }
     
-    var year : String {
-        item.year
+    var year: String {
+        item.year ?? "No Year"
     }
     
-    var type : String {
-        guard let firstCharacter = item.type.first else {
+    var type: String {
+        guard let firstCharacter = item.type?.first else {
             return ""
         }
-        return String(firstCharacter).uppercased() + item.type.dropFirst().lowercased()
+        return String(firstCharacter).uppercased() + (item.type?.dropFirst().lowercased() ?? "No Type")
     }
     
-    var poster : String {
-        if item.poster == AppConstants.notAvaliableApiText {
-            return AppConstants.noImageUrl
+    var poster: String {
+        if let poster = item.poster, poster != AppConstants.notAvaliableApiText {
+            return poster
         } else {
-            return item.poster
+            return AppConstants.noImageUrl
         }
     }
     
     var imdbId: String {
-        item.imdbID
+        item.imdbID ?? "No ImdbId"
     }
     
-    var typeColor : UIColor {
-        AppConstantFunctions.getTypeColor(forType: item.type)
+    var typeColor: UIColor {
+        AppConstantFunctions.getTypeColor(forType: item.type ?? "movie")
     }
     
 }

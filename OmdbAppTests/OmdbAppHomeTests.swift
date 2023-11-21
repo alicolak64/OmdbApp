@@ -10,19 +10,18 @@ import XCTest
 
 final class OmdbAppHomeTests: XCTestCase {
     
-    private var mockOmdbService : MockOmdbManager!
-    private var mockHomeViewModel : HomeViewModel!
-    private var mockHomeViewOutput : MockHomeViewOutput!
+    private var mockOmdbService: MockOmdbManager!
+    private var mockHomeViewModel: HomeViewModel!
+    private var mockHomeViewOutput: MockHomeViewOutput!
     
     
     override func setUpWithError() throws {
         mockOmdbService = MockOmdbManager()
         
-        mockHomeViewModel = HomeViewModel(omdbService: mockOmdbService)
-        
         mockHomeViewOutput = MockHomeViewOutput()
-        mockHomeViewModel.delegate = mockHomeViewOutput
-                
+        
+        mockHomeViewModel = HomeViewModel( delegate: mockHomeViewOutput, omdbService: mockOmdbService)
+        
     }
     
     override func tearDownWithError() throws {
@@ -31,150 +30,126 @@ final class OmdbAppHomeTests: XCTestCase {
         mockHomeViewOutput = nil
     }
     
-    func testSearchMovieForBatman_whenAPISuccess_itemCount() throws {
+    func testSearchMovieForBatman_whenAPISuccess_reloadData() throws {
+        XCTAssertFalse(mockHomeViewOutput.isInvokeReloadCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeReloadCollectionViewCount, 0)
+        XCTAssertFalse(mockHomeViewOutput.isInvokeShowCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeShowCollectionViewCount, 0)
         mockHomeViewModel.searchItems(text: SearchTextMockData.initalSearchText)
-        XCTAssertEqual(mockHomeViewOutput.items.count, SearchMockData.batmanSearchResponsePage1.search?.count)
+        XCTAssertTrue(mockHomeViewOutput.isInvokeReloadCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeReloadCollectionViewCount, 1)
+        XCTAssertTrue(mockHomeViewOutput.isInvokeShowCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeShowCollectionViewCount, 1)
     }
     
     func testSearchMovieForBatman_whenEnterShortCharacter_showError() throws {
+        XCTAssertEqual(mockHomeViewOutput.errorText, "")
+        XCTAssertEqual(mockHomeViewOutput.invokeUpdateErrorTextCount, 0)
+        XCTAssertFalse(mockHomeViewOutput.isInvokeHideCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeHideCollectionViewCount, 0)
         mockHomeViewModel.searchItems(text: SearchTextMockData.shortSearchText)
-        XCTAssertEqual(mockHomeViewOutput.items.count, 0)
         XCTAssertEqual(mockHomeViewOutput.errorText, SearchTextMockData.characterErrorText)
+        XCTAssertEqual(mockHomeViewOutput.invokeUpdateErrorTextCount, 1)
+        XCTAssertTrue(mockHomeViewOutput.isInvokeHideCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeHideCollectionViewCount, 1)
     }
     
     func testSearchMovie_whenAPIResponseFailure_showError() throws {
+        XCTAssertEqual(mockHomeViewOutput.errorText, "")
+        XCTAssertEqual(mockHomeViewOutput.invokeUpdateErrorTextCount, 0)
+        XCTAssertFalse(mockHomeViewOutput.isInvokeHideCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeHideCollectionViewCount, 0)
         mockHomeViewModel.searchItems(text: SearchTextMockData.movieNotFoundSearchText)
-        XCTAssertEqual(mockHomeViewOutput.items.count, 0)
         XCTAssertEqual(mockHomeViewOutput.errorText, SearchTextMockData.movieNotFoundErrorText)
+        XCTAssertEqual(mockHomeViewOutput.invokeUpdateErrorTextCount, 1)
+        XCTAssertTrue(mockHomeViewOutput.isInvokeHideCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeHideCollectionViewCount, 1)
     }
     
-    func testSearchMovieForBatman_whenAPISuccess_showFirstItem() throws {
+    func testPagination_whenAPIResponseSuccess_reloadData() throws {
+        XCTAssertFalse(mockHomeViewOutput.isInvokeReloadCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeReloadCollectionViewCount, 0)
+        XCTAssertFalse(mockHomeViewOutput.isInvokeShowCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeShowCollectionViewCount, 0)
         mockHomeViewModel.searchItems(text: SearchTextMockData.initalSearchText)
-        let item1 = mockHomeViewOutput.items[0]
-        let item2 = SearchMockData.batmanSearchResponsePage1.search?.map(SearchItemDto.init)[0]
-        XCTAssertEqual(item1.imdbId, item2?.imdbId)
-        XCTAssertEqual(item1.title, item2?.title)
-        XCTAssertEqual(item1.poster, item2?.poster)
-        XCTAssertEqual(item1.year, item2?.year)
-        XCTAssertEqual(item1.type, item2?.type)
+        XCTAssertTrue(mockHomeViewOutput.isInvokeReloadCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeReloadCollectionViewCount, 1)
+        XCTAssertTrue(mockHomeViewOutput.isInvokeShowCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeShowCollectionViewCount, 1)
+        mockHomeViewModel.getNextPageItems()
+        XCTAssertEqual(mockHomeViewOutput.invokeReloadCollectionViewCount, 2)
+        XCTAssertEqual(mockHomeViewOutput.invokeShowCollectionViewCount, 2)
     }
     
-    func testSearchMovieForBatman_whenAPISuccess_showLastItem() throws {
+    func testPaginationLastPage_whenAPIResponseSuccess_reloadData() throws {
+        XCTAssertFalse(mockHomeViewOutput.isInvokeReloadCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeReloadCollectionViewCount, 0)
+        XCTAssertFalse(mockHomeViewOutput.isInvokeShowCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeShowCollectionViewCount, 0)
+        mockHomeViewModel.searchItems(text: SearchTextMockData.fightClubSearchText)
+        mockHomeViewModel.getNextPageItems()
+        mockHomeViewModel.getNextPageItems()
+        mockHomeViewModel.getNextPageItems()
+        mockHomeViewModel.getNextPageItems()
+        mockHomeViewModel.getNextPageItems()
+        mockHomeViewModel.getNextPageItems()
+        XCTAssertEqual(mockHomeViewOutput.invokeReloadCollectionViewCount, 7)
+    }
+    
+    func testPaginationLastPage2_whenAPIResponseSuccess_reloadData() throws {
+        XCTAssertFalse(mockHomeViewOutput.isInvokeReloadCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeReloadCollectionViewCount, 0)
+        XCTAssertFalse(mockHomeViewOutput.isInvokeShowCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeShowCollectionViewCount, 0)
+        mockHomeViewModel.searchItems(text: SearchTextMockData.fightClubSearchText)
+        mockHomeViewModel.getNextPageItems()
+        mockHomeViewModel.getNextPageItems()
+        mockHomeViewModel.getNextPageItems()
+        mockHomeViewModel.getNextPageItems()
+        mockHomeViewModel.getNextPageItems()
+        mockHomeViewModel.getNextPageItems()
+        mockHomeViewModel.getNextPageItems()
+        XCTAssertEqual(mockHomeViewOutput.invokeReloadCollectionViewCount, 7)
+    }
+    
+    func testShowErrorAndSearchMovie_whenAPIResponseSuccess_reloadData() throws {
+        XCTAssertEqual(mockHomeViewOutput.errorText, "")
+        XCTAssertEqual(mockHomeViewOutput.invokeUpdateErrorTextCount, 0)
+        XCTAssertFalse(mockHomeViewOutput.isInvokeHideCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeHideCollectionViewCount, 0)
+        mockHomeViewModel.searchItems(text: SearchTextMockData.movieNotFoundSearchText)
+        XCTAssertEqual(mockHomeViewOutput.errorText, SearchTextMockData.movieNotFoundErrorText)
+        XCTAssertEqual(mockHomeViewOutput.invokeUpdateErrorTextCount, 1)
+        XCTAssertTrue(mockHomeViewOutput.isInvokeHideCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeHideCollectionViewCount, 1)
         mockHomeViewModel.searchItems(text: SearchTextMockData.initalSearchText)
-        let item1 = mockHomeViewOutput.items[mockHomeViewOutput.items.count - 1]
-        let item2 = SearchMockData.batmanSearchResponsePage1.search?.map(SearchItemDto.init)[SearchMockData.batmanSearchResponsePage1.search!.count - 1]
-        XCTAssertEqual(item1.imdbId, item2?.imdbId)
-        XCTAssertEqual(item1.title, item2?.title)
-        XCTAssertEqual(item1.poster, item2?.poster)
-        XCTAssertEqual(item1.year, item2?.year)
-        XCTAssertEqual(item1.type, item2?.type)
+        XCTAssertTrue(mockHomeViewOutput.isInvokeReloadCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeReloadCollectionViewCount, 2)
+        XCTAssertTrue(mockHomeViewOutput.isInvokeShowCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeShowCollectionViewCount, 1)
     }
     
-    func testPaginationForBatman_whenAPISuccess_itemCount() throws {
+    func testSearchMovieAndShowError_whenAPIResponseSuccess_showError() throws {
+        XCTAssertFalse(mockHomeViewOutput.isInvokeReloadCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeReloadCollectionViewCount, 0)
+        XCTAssertFalse(mockHomeViewOutput.isInvokeShowCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeShowCollectionViewCount, 0)
         mockHomeViewModel.searchItems(text: SearchTextMockData.initalSearchText)
-        mockHomeViewModel.getNextPageItems()
-        let itemCount = SearchMockData.batmanSearchResponsePage1.search!.count + SearchMockData.batmanSearchResponsePage2.search!.count
-        XCTAssertEqual(mockHomeViewOutput.items.count, itemCount)
+        XCTAssertTrue(mockHomeViewOutput.isInvokeReloadCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeReloadCollectionViewCount, 1)
+        XCTAssertTrue(mockHomeViewOutput.isInvokeShowCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeShowCollectionViewCount, 1)
+        XCTAssertEqual(mockHomeViewOutput.errorText, "")
+        XCTAssertEqual(mockHomeViewOutput.invokeUpdateErrorTextCount, 0)
+        XCTAssertFalse(mockHomeViewOutput.isInvokeHideCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeHideCollectionViewCount, 0)
+        mockHomeViewModel.searchItems(text: SearchTextMockData.movieNotFoundSearchText)
+        XCTAssertEqual(mockHomeViewOutput.errorText, SearchTextMockData.movieNotFoundErrorText)
+        XCTAssertEqual(mockHomeViewOutput.invokeUpdateErrorTextCount, 1)
+        XCTAssertTrue(mockHomeViewOutput.isInvokeHideCollectionView)
+        XCTAssertEqual(mockHomeViewOutput.invokeHideCollectionViewCount, 1)
     }
     
-    func testPaginationForBatman_whenAPISuccess_showFirstItem() throws {
-        mockHomeViewModel.searchItems(text: SearchTextMockData.initalSearchText)
-        mockHomeViewModel.getNextPageItems()
-        let item1 = mockHomeViewOutput.items[0]
-        let item2 = SearchMockData.batmanSearchResponsePage1.search?.map(SearchItemDto.init)[0]
-        XCTAssertEqual(item1.imdbId, item2?.imdbId)
-        XCTAssertEqual(item1.title, item2?.title)
-        XCTAssertEqual(item1.poster, item2?.poster)
-        XCTAssertEqual(item1.year, item2?.year)
-        XCTAssertEqual(item1.type, item2?.type)
-    }
     
-    func testPaginationForBatman_whenAPISuccess_showLastItem() throws {
-        mockHomeViewModel.searchItems(text: SearchTextMockData.initalSearchText)
-        mockHomeViewModel.getNextPageItems()
-        let item1 = mockHomeViewOutput.items[mockHomeViewOutput.items.count - 1]
-        let item2 = SearchMockData.batmanSearchResponsePage2.search?.map(SearchItemDto.init)[SearchMockData.batmanSearchResponsePage2.search!.count - 1]
-        XCTAssertEqual(item1.imdbId, item2?.imdbId)
-        XCTAssertEqual(item1.title, item2?.title)
-        XCTAssertEqual(item1.poster, item2?.poster)
-        XCTAssertEqual(item1.year, item2?.year)
-        XCTAssertEqual(item1.type, item2?.type)
-    }
     
-    func testSearchMovieForFightClub_whenAPISuccess_itemCount() throws {
-        mockHomeViewModel.searchItems(text: SearchTextMockData.fightClubSearchText)
-        XCTAssertEqual(mockHomeViewOutput.items.count, SearchMockData.fightClubSearchResponsePage1.search?.count)
-    }
-    
-    func testSearchMovieForFightClub_whenAPISuccess_showFirstItem() throws {
-        mockHomeViewModel.searchItems(text: SearchTextMockData.fightClubSearchText)
-        let item1 = mockHomeViewOutput.items[0]
-        let item2 = SearchMockData.fightClubSearchResponsePage1.search?.map(SearchItemDto.init)[0]
-        XCTAssertEqual(item1.imdbId, item2?.imdbId)
-        XCTAssertEqual(item1.title, item2?.title)
-        XCTAssertEqual(item1.poster, item2?.poster)
-        XCTAssertEqual(item1.year, item2?.year)
-        XCTAssertEqual(item1.type, item2?.type)
-    }
-    
-    func testSearchMovieForFightClub_whenAPISuccess_showLastItem() throws {
-        mockHomeViewModel.searchItems(text: SearchTextMockData.fightClubSearchText)
-        let item1 = mockHomeViewOutput.items[mockHomeViewOutput.items.count - 1]
-        let item2 = SearchMockData.fightClubSearchResponsePage1.search?.map(SearchItemDto.init)[SearchMockData.fightClubSearchResponsePage1.search!.count - 1]
-        XCTAssertEqual(item1.imdbId, item2?.imdbId)
-        XCTAssertEqual(item1.title, item2?.title)
-        XCTAssertEqual(item1.poster, item2?.poster)
-        XCTAssertEqual(item1.year, item2?.year)
-        XCTAssertEqual(item1.type, item2?.type)
-    }
-    
-    func testPaginationForFightClub_whenAPISuccess_itemCount() throws {
-        mockHomeViewModel.searchItems(text: SearchTextMockData.fightClubSearchText)
-        mockHomeViewModel.getNextPageItems()
-        let itemCount = SearchMockData.fightClubSearchResponsePage1.search!.count + SearchMockData.fightClubSearchResponsePage2.search!.count
-        XCTAssertEqual(mockHomeViewOutput.items.count, itemCount)
-    }
-    
-    func testPaginationForFightClub_whenAPISuccess_showFirstItem() throws {
-        mockHomeViewModel.searchItems(text: SearchTextMockData.fightClubSearchText)
-        mockHomeViewModel.getNextPageItems()
-        let item1 = mockHomeViewOutput.items[0]
-        let item2 = SearchMockData.fightClubSearchResponsePage1.search?.map(SearchItemDto.init)[0]
-        XCTAssertEqual(item1.imdbId, item2?.imdbId)
-        XCTAssertEqual(item1.title, item2?.title)
-        XCTAssertEqual(item1.poster, item2?.poster)
-        XCTAssertEqual(item1.year, item2?.year)
-        XCTAssertEqual(item1.type, item2?.type)
-    }
-    
-    func testPaginationForFightClub_whenAPISuccess_showLastItem() throws {
-        mockHomeViewModel.searchItems(text: SearchTextMockData.fightClubSearchText)
-        mockHomeViewModel.getNextPageItems()
-        let item1 = mockHomeViewOutput.items[mockHomeViewOutput.items.count - 1]
-        let item2 = SearchMockData.fightClubSearchResponsePage2.search?.map(SearchItemDto.init)[SearchMockData.fightClubSearchResponsePage2.search!.count - 1]
-        XCTAssertEqual(item1.imdbId, item2?.imdbId)
-        XCTAssertEqual(item1.title, item2?.title)
-        XCTAssertEqual(item1.poster, item2?.poster)
-        XCTAssertEqual(item1.year, item2?.year)
-        XCTAssertEqual(item1.type, item2?.type)
-    }
-    
-    func testLastPagePaginationForFightClub_whenAPISuccess_showLastItem() throws {
-        mockHomeViewModel.searchItems(text: SearchTextMockData.fightClubSearchText)
-        mockHomeViewModel.getNextPageItems()
-        mockHomeViewModel.getNextPageItems()
-        mockHomeViewModel.getNextPageItems()
-        mockHomeViewModel.getNextPageItems()
-        mockHomeViewModel.getNextPageItems()
-        mockHomeViewModel.getNextPageItems()
-        mockHomeViewModel.getNextPageItems()
-        let item1 = mockHomeViewOutput.items[mockHomeViewOutput.items.count - 1]
-        let item2 = SearchMockData.fightClubSearchResponsePage7.search?.map(SearchItemDto.init)[SearchMockData.fightClubSearchResponsePage7.search!.count - 1] // Last Page 6 element
-        XCTAssertEqual(item1.imdbId, item2?.imdbId)
-        XCTAssertEqual(item1.title, item2?.title)
-        XCTAssertEqual(item1.poster, item2?.poster)
-        XCTAssertEqual(item1.year, item2?.year)
-        XCTAssertEqual(item1.type, item2?.type)
-    }
-        
 }

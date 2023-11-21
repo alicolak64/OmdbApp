@@ -9,7 +9,7 @@ import UIKit
 
 struct DetailItemDto: Codable {
     
-    let item : DetailItemResponse
+    let item: DetailItemResponse
     
     var title: String {
         item.title ?? "No Title"
@@ -43,19 +43,19 @@ struct DetailItemDto: Codable {
         item.actors ?? "No Actors"
     }
     
-    var plot : String {
+    var plot: String {
         item.plot ?? "No Desc"
     }
     
-    var language : String {
+    var language: String {
         item.language ?? "No Lang"
     }
     
-    var country : String {
+    var country: String {
         item.country ?? "No Country"
     }
     
-    var awards : String {
+    var awards: String {
         item.awards ?? "No Awards"
     }
     
@@ -68,29 +68,29 @@ struct DetailItemDto: Codable {
     }
     
     var ratings: [RatingDto]? {
-        return item.ratings?.map { RatingDto(source: $0.source, value: $0.value) }
+        return item.ratings?.map { RatingDto(source: $0.source ?? "No Source", value: $0.value ?? "No Value") }
     }
     
     var imdbRating: String {
         item.imdbRating ?? "0.0"
     }
     
-    var imdbVotes : String {
+    var imdbVotes: String {
         item.imdbVotes ?? "No Imdb Votes"
     }
     
-    var imdbID : String {
+    var imdbID: String {
         item.imdbID
     }
     
-    var type : String {
+    var type: String {
         guard let firstCharacter = item.type?.first else {
             return ""
         }
         return String(firstCharacter).uppercased() + (item.type?.dropFirst().lowercased())!
     }
     
-    var typeColor : UIColor {
+    var typeColor: UIColor {
         AppConstantFunctions.getTypeColor(forType: item.type ?? "")
     }
     
